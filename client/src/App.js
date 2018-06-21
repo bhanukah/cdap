@@ -75,7 +75,7 @@ class NavLink extends Component {
 const App = () => (
   <div>
     <div class="jumbotron jumbotron-fluid">
-      <div class="container bg-dark">
+      <div class="container">
         <h1 class="display-5">Law Bot</h1>
         <p class="lead">A chatbot which assist people with their legal issues.</p>
       </div>

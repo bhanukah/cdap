@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AboutComp from './AboutComp'
+import ChatComp from './ChatComp'
 
 export const Home = () => (
     <div>
@@ -9,7 +10,7 @@ export const Home = () => (
 
 export const Chatbot = () => (
     <div>
-        <h1>Chatbot</h1>
+        <ChatComp/>
     </div>
 )
 
