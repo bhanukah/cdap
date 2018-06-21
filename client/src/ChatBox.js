@@ -40,7 +40,7 @@ class ChatBox extends Component {
 			<section
 				className="messages-wrapper"
 				style={{height: `${this.props.dialogHeight}px`}}>
-				<div className="messages">
+				<div class="bg-light" className="messages">
 					{groups.map((group, i) =>
 						<MsgGroup
 							key={i}
