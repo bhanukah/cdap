@@ -1,2 +1,2 @@
 # cdap
-cdap project
+cdap project 1
