@@ -77,7 +77,7 @@ const App = () => (
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-5">Law Bot</h1>
-        <p class="lead">A chatbot which assist people with their legal issues.</p>
+        <p class="lead">Artificially Inteligent Legal Information Assistant.</p>
       </div>
     </div>
     <Header />
