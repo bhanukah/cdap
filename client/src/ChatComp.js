@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ChatBox from './ChatBox';
 import Input from './Input';
+import axios from 'axios'
 
 const BOT_DELAY = 4000;
 const BOT_SPEED = 0.03;
@@ -66,17 +67,30 @@ class ChatComp extends Component {
     }
   
     getResponse(text) {
-      return this.dialogflow.textRequest(text)
-        .then(data => data.result.fulfillment.speech);
+      // return this.dialogflow.textRequest(text).then(data => data.result.fulfillment.speech);
+      
+      // return axios.get('http://localhost:8080/bot').then(response => response)
+      this.setState({isBotTyping: true});
+
+      return axios.post('http://localhost:8080/bot', {
+          id: 'Fred',
+          message: text
+        })
+        .then(data => data.data.message)
+        .catch(function (error) {
+          console.log(error);
+        });
     }
   
     handleSubmitText(text) {
   
       // append user text
       this.appendMessage(text, true);
+
+
   
       // fetch bot text, process as queue
-      if (this.dialogflow) {
+      if (true) {
         this.getResponse(text)
           .then(this.processResponse);
       } else if (this.props.getResponse) {
