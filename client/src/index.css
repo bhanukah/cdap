@@ -222,3 +222,22 @@ body {
 .bannerhead {
   font-weight: bold;
 }
+
+.chatback {
+  background-image: radial-gradient(rgb(228, 228, 228), rgb(241, 241, 241), rgb(255, 255, 255));
+  min-height: 72vh;
+}
+
+.footermain {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(235, 235, 235);
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.mainbanner {
+  margin-bottom: 0;
+}

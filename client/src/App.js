@@ -5,11 +5,16 @@ import './App.css';
 
 const Main = () => (
   <main>
+    <div className="chatback">
     <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/1' component={Chatbot}/>
       <Route exact path='/2' component={About} />
     </Switch>
+    </div>
+    <div className="footermain">
+      <p></p>
+    </div>
   </main>
 )
 
@@ -74,7 +79,7 @@ class NavLink extends Component {
 
 const App = () => (
   <div>
-    <div class="jumbotron jumbotron-fluid lawbanner">
+    <div class="mainbanner jumbotron jumbotron-fluid lawbanner">
       <div class="bannertext">
         <h1 class="bannerhead">Law Bot</h1>
         <p class="lead">Artificially Inteligent Legal Information Assistant.</p>

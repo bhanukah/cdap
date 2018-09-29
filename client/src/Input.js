@@ -48,7 +48,7 @@ class Input extends Component {
 				<input className="text-input"
 							 type="text"
 							 name="inputText"
-							 placeholder="Enter your message"
+							 placeholder="Enter your question"
 							 value={this.state.value}
 							 ref={input => this._text = input}
 							 onChange={this.handleChange}

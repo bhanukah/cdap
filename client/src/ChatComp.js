@@ -135,6 +135,7 @@ class ChatComp extends Component {
     render() {
       return (
         <div className="container" style={this.state.isVisible ? {display: 'block'} : {display: 'none'}}>
+          <br/>
           <div style={this.state.isOpen ? {minHeight: `${this.state.dialogHeight}px`} : {maxHeight: 0, overflow: 'hidden'}}>
             <ChatBox messages={this.state.messages}
                     isBotTyping={this.state.isBotTyping}
