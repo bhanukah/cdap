@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ChatBox from './ChatBox';
 import Input from './Input';
 import axios from 'axios'
+import randomstring from 'randomstring';
 
 const BOT_DELAY = 4000;
 const BOT_SPEED = 0.03;
@@ -21,6 +22,10 @@ class ChatComp extends Component {
       }
       this.botQueue = [];
       this.isProcessingQueue = false;
+      this.chatid = randomstring.generate({
+        length: 24,
+        charset: 'hex'
+      });
       this.state = {
         title: props.title || 'React Bot UI',
         messages: [],
@@ -73,13 +78,11 @@ class ChatComp extends Component {
     }
   
     getResponse(text) {
-      // return this.dialogflow.textRequest(text).then(data => data.result.fulfillment.speech);
-      
       // return axios.get('http://localhost:8080/bot').then(response => response)
       this.setState({isBotTyping: true});
 
       return axios.post('http://localhost:8080/bot', {
-          id: 'Fred',
+          id: this.chatid,
           message: text
         })
         .then(data => data.data.message)

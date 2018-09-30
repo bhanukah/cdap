@@ -1,8 +1,9 @@
 package com.learn.service.impl;
 
-import com.learn.model.BotMessage;
-import com.learn.model.UserMessage;
+import com.google.gson.Gson;
+import com.learn.model.*;
 import com.learn.repository.BotMessageRepository;
+import com.learn.repository.ChatObjectRepo;
 import com.learn.service.BotService;
 import org.apache.jena.iri.impl.Main;
 import org.apache.jena.query.*;
@@ -12,7 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 import org.json.JSONObject;
-import javax.net.ssl.HttpsURLConnection;
+
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -28,27 +30,122 @@ public class BotServiceImpl implements BotService {
     private BotMessageRepository botMessageRepository;
 
     @Autowired
+    private ChatObjectRepo chatObjectRepo;
+
+    @Autowired
     private org.springframework.core.io.ResourceLoader resourceLoader;
 
     public BotMessage createComment(UserMessage userMessage) {
-        System.out.print("User Message - id: "+userMessage.getId()+" message: "+userMessage.getMessage());
+        System.out.println("User Message - id: "+userMessage.getId()+" message: "+userMessage.getMessage());
+        String intent = "";
         String res = "";
 
-        //TimeUnit.SECONDS.sleep(3);
+        ChatObject chatObj = chatObjectRepo.findOne(userMessage.getId());
 
+        if (chatObj == null) {
+            chatObj = new ChatObject();
+        }
 
         try {
-            res = intentClassifier(userMessage.getMessage());
-            //res = googleQ("police", "Dehiwala");
+            intent = intentClassifier(userMessage.getMessage());
+            System.out.println(intent);
+            res = genOutput(chatObj, intent);
+            //res = googleQ("police station", "Dehiwala");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return new BotMessage("1231231212", res);
+        if(chatObj != null){
+            chatObj.setId(userMessage.getId());
+            chatObjectRepo.save(chatObj);
+        }
+        System.out.println(res);
+        return new BotMessage(userMessage.getId(), res);
         //return botMessageRepository.save(userMessage);
     }
 
+    private String genOutput (ChatObject chatObject, String intent) {
+        String response = "Sorry, I don't understand.";
+
+        if (intent.equals("error")) {
+            return "Error occurred. :(";
+        }
+        if (intent.equals("greet")) {
+            if (chatObject.getId() != null){
+                chatObjectRepo.delete(chatObject.getId());
+            }
+            return  "Hi, How can I Help you?";
+        } else if (intent.equals("goodbye")) {
+            if (chatObject.getId() != null){
+                chatObjectRepo.delete(chatObject.getId());
+            }
+            return  "Bye, have a nice day. :)";
+        }
+        if (chatObject.getContext() == null &&
+                (intent.equals("new_nic") || intent.equals("lost_nic") || intent.equals("new_license") || intent.equals("lost_license"))) {
+            chatObject.setContext(intent);
+            chatObject.setApproved("true");
+            QueryObject res = gatIntentData(intent);
+            String temp = getNextMessage(res, chatObject);
+            if (temp != null){
+                return temp;
+            }
+
+        }else if (chatObject.getId() != null && chatObject.getContext() != null &&
+                 (intent.equals("affirm") || intent.equals("deny"))) {
+            QueryObject res = gatIntentData(chatObject.getContext());
+            String temp = getNextMessage(res, chatObject);
+            if (intent.equals("deny")) {
+                chatObject.setApproved("false");
+            }
+
+            if (temp != null){
+                return temp;
+            }
+        }
+
+        QueryObject res = gatIntentData(chatObject.getContext());
+        if (res != null){
+            response = getSteps(res);
+            chatObject.setContext(null);
+        }
+
+        return response;
+    }
+
+    private QueryObject gatIntentData(String intent){
+        QueryObject res = null;
+        if (intent.equals("new_nic")) {
+            res = getData("NIC", "NewNIC");
+        }else if (intent.equals("lost_nic")) {
+            res = getData("NIC", "MissingNIC");
+        }else if (intent.equals("new_license")) {
+            res = getData("DrivingLicense", "NewDrivingLicense");
+        }else if (intent.equals("lost_license")) {
+            res = getData("DrivingLicense", "MissingDrivingLicense");
+        }
+        return res;
+    }
+
+    private String getNextMessage(QueryObject queryObject, ChatObject chatObject) {
+        String res = "";
+        if (chatObject.getStep() != 0 && queryObject.prereq.size() == chatObject.getStep()){
+            return null;
+        }else if (queryObject.prereq.size() > 0){
+            res = queryObject.prereq.get(chatObject.getStep()).instruction;
+            chatObject.setStep(chatObject.getStep() + 1);
+        }
+        return res;
+    }
+
+    private String getSteps(QueryObject queryObject) {
+        String res = "";
+        for (InstObject x: queryObject.steps){
+            res += x.name+"\n"+x.instruction+"\n";
+        }
+        return res;
+    }
 
     private String nlp2 (String message) throws IOException, InterruptedException {
         ClassLoader classLoader = getClass().getClassLoader();
@@ -78,7 +175,7 @@ public class BotServiceImpl implements BotService {
 
     private String intentClassifier (String message) throws IOException, InterruptedException {
         ClassLoader classLoader = getClass().getClassLoader();
-        String result = "";
+        String result;
         boolean isError = false;
         String path  = classLoader.getResource("predict.py").getPath();
         String command = "cmd /c python -W ignore "+path.substring(1)+ " \""+message+"\"";
@@ -109,7 +206,7 @@ public class BotServiceImpl implements BotService {
             JSONObject intent = myResponse.getJSONObject("intent");
             result = intent.getString("name");
         } catch (Exception e) {
-            result = "Sorry, I didn't understand what you said. :(";
+            result = "error";
         }
         return result;
     }
@@ -138,9 +235,10 @@ public class BotServiceImpl implements BotService {
         return myResponse.getString("status");
     }
 
-    public List<BotMessage> listComments() {
+    public String listComments() {
         //return botMessageRepository.findAll();
-        return getVehicleData("Car", "Toyota");
+        QueryObject res = getData("NIC", "NewNIC");
+        return res.steps.get(0).instruction;
     }
 
     private ResultSet sparqlTest(String queryString) {
@@ -154,7 +252,8 @@ public class BotServiceImpl implements BotService {
     }
 
 
-    List<BotMessage> getVehicleData(String act1, String act2){
+    QueryObject getData(String act1, String act2){
+        QueryObject queryObject = null;
         System.out.println("event fires");
         List<BotMessage> list= new java.util.ArrayList<BotMessage>();
         String queryString ="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
@@ -165,22 +264,25 @@ public class BotServiceImpl implements BotService {
                 "\n" +
                 "SELECT *\n" +
                 "WHERE {\n" +
-                "  myPre:DrivingLicense myPre:NewDrivingLicense ?object\n" +
+                "  myPre:"+act1+" myPre:"+act2+" ?object\n" +
                 "}";
         ResultSet resultSet=sparqlTest(queryString);
         while(resultSet.hasNext()){
-            BotMessage vehicle;
             QuerySolution querySolution= resultSet.nextSolution();
             try{
-                //vehicle = new BotMessage(querySolution.getResource("transmission").getLocalName(), querySolution.getResource("vehicle").getLocalName());
-                vehicle = new BotMessage("jj", querySolution.get("?object").toString());
+                String qqq = querySolution.get("?object").toString();
+                qqq = qqq.replaceAll("\n", "");
+                qqq = qqq.replaceAll("\\\\", "");
+                JSONObject myResponse = new JSONObject(qqq);
+                Gson gson=new Gson();
+                queryObject = gson.fromJson(qqq, QueryObject.class);
+                qqq= qqq;
             }catch(Exception ex){
                 System.out.println(ex);
                 continue;
             }
-            list.add(vehicle);
         }
-        return list;
+        return queryObject;
     }
 
 }

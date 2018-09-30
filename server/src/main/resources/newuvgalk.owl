@@ -272,34 +272,57 @@ Some departments which require extract of complaints are listed below:
 National Identity Card	Grama Niladari / Department of Registration of Persons
 Passport	Department of Immigration and Emigration
 Driving Licenses	Department of Motor Vehicles</MissingNIC>
-        <NewNIC>Step 1 : The person concerned has to go to the Police Station to make a complaint.
-Step 2 : The person concerned requests for an extract of complaint form once the statement is written by the Police officer.
-Note : The Police station charges Rs.25.00 for each page of extracted complaint
-Step 3 : The police officer along with the extract of complaint issues the form issued by the Department of Registration of Persons to the person concerned.
-Step 4 : The person concerned has to fill in the form issued by the Department of Registrations of Persons along with, attach two photos and get it certified by the Grama Niladari , Divisional Secretariat and the respective Police station. 
-Note 01 : The Grama Niladari verifies the application with the relevant police station before certifying the application request.
-Note 02 : The person concerned has to get his / her application request certified by the respective authorities in their own divisions.
-Step 5 : The person concerned has to submit certified application to the Grama Niladari. 
-Step 6 : The Grama Niladari submits certified application to the Divisional Secretarial Who in turn submits the application to the Department of Registration of Persons.
-Step 7 : The person concerned has to collect the National Identity card either from the Grama Niladari Office or the person will receive the National Identity Card by Registered Post if he/she has provided a stamped envelope to the Grama Niladari.
-
-Qualification Criteria
-Any citizen or foreigner based in Sri Lanka to acquire this service at a time of need.
-
-Submission Procedure
-Visit Respective Police Station
-The person concerned should visit the respective police station to make a complain
-Police Station
-Working Hours
-24 / 7 / 365 Days
-
-Obtain Extract Copy of Complain
-The person concerned should make sure that he / she gets an extract of complaint copy from the local police station depending on item he/she has lost.
-Some departments which require extract of complaints are listed below:
-
-National Identity Card	Grama Niladari / Department of Registration of Persons
-Passport	Department of Immigration and Emigration
-Driving Licenses	Department of Motor Vehicles</NewNIC>
+        <NewNIC>{
+  &quot;steps&quot;: [
+    {
+      &quot;name&quot;: &quot;Step 1&quot;,
+      &quot;instruction&quot;: &quot;Duly completed RPD Form 1&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Step 2&quot;,
+      &quot;instruction&quot;: &quot;Applicants under 50 years of age should compulsorily submit the Birth Certificate (BC) or the Probable Age Certificate issued by the Additional District Registrar in order to obtain an ID card.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Step 3&quot;,
+      &quot;instruction&quot;: &quot;Applicants over 50 years of age and do not possess the birth certificate or the probable age certificate, could submit two or more following alternative documents along with the results of search of registers and an Affidavit to confirm the age.
+School leaving certificate
+Certificate of Baptism
+Copies of Birth certificates of children of the applicant, (if the date of birth of the applicant indicated )
+Extract of the birth certificate of the applicant
+Citizenship certificate of Sri Lanka (if the date of birth indicated)
+Estate leaving certificate (if the date of birth indicated)
+Certified copies of relevant pages of the Passport
+Registration card issued by the Estate Superintendent
+Horoscope (if available)&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Step 4&quot;,
+      &quot;instruction&quot;: &quot;Applicants born in a foreign country should submit the citizenship certificates issued by the Department of Immigration &amp; Emigration of Sri Lanka.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Step 5&quot;,
+      &quot;instruction&quot;: &quot;Women applicants, who wish to include husband’s family name in the ID card need to submit the original &amp; a copy of the marriage certificate..&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Step 6&quot;,
+      &quot;instruction&quot;: &quot;Five colour photographs of the size of 1 ⅜” X ⅞”.&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Step 7&quot;,
+      &quot;instruction&quot;: &quot;Applicants, who wish to include their occupation/designation in the ID card, should submit a service certificate obtained during the last three months. Professionals also need to submit documentary evidence, in case if they wish to include their profession in the ID card. (I.e. Engineers, Doctors, Accountants, Lawyers should submit relevant Degree certificates). In case of the Businessmen, they need to submit a certified copy of the Business Registration certificate.&quot;
+    }
+  ],
+  &quot;prereq&quot;: [
+ {
+      &quot;name&quot;: &quot;Req1&quot;,
+      &quot;instruction&quot;: &quot;Are you a Sri Lankan citizen?&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Req2&quot;,
+      &quot;instruction&quot;: &quot;Are you attained 16 years of age?&quot;
+    }
+  ]
+}</NewNIC>
     </owl:NamedIndividual>
     
 

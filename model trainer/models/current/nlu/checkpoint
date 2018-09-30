@@ -1,2 +1,2 @@
-model_checkpoint_path: "E:\\z\\models\\current\\nlu\\intent_classifier_tensorflow_embedding.ckpt"
-all_model_checkpoint_paths: "E:\\z\\models\\current\\nlu\\intent_classifier_tensorflow_embedding.ckpt"
+model_checkpoint_path: "E:\\__CDAP\\project\\cdap.git\\trunk\\model trainer\\models\\current\\nlu\\intent_classifier_tensorflow_embedding.ckpt"
+all_model_checkpoint_paths: "E:\\__CDAP\\project\\cdap.git\\trunk\\model trainer\\models\\current\\nlu\\intent_classifier_tensorflow_embedding.ckpt"

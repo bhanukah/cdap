@@ -98,16 +98,340 @@
         "text": "i lost my nic"
       },
       {
+        "intent": "lost_nic",
+        "text": "i lost my national identity card"
+      },
+      {
+        "intent": "lost_nic",
+        "text": "i lost my identity card"
+      },
+      {
+        "intent": "lost_nic",
+        "text": "nic lost"
+      },
+      {
+        "intent": "lost_nic",
+        "text": "national identity card lost"
+      },
+      {
+        "intent": "lost_nic",
+        "text": "my nic has gone missing"
+      },
+      {
+        "intent": "lost_nic",
+        "text": "my national identity card has gone missing"
+      },
+      {
+        "intent": "lost_nic",
+        "text": "my nic has been missing"
+      },
+      {
+        "intent": "lost_nic",
+        "text": "my national identity card has been missing"
+      },
+      {
+        "intent": "lost_nic",
+        "text": "my nic went missing"
+      },
+      {
+        "intent": "lost_nic",
+        "text": "my national identity card went missing"
+      },
+      {
         "intent": "new_nic",
         "text": "how can i get a new id"
+      },
+      {
+        "intent": "new_nic",
+        "text": "how can i get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "how can i obtain a new id"
+      },
+      {
+        "intent": "new_nic",
+        "text": "how can i obtain a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "i need to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "i need to obtain a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "i need to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "i need to obtain a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "i want to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "i want to obtain a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "i want to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "i want to obtain a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can i know the way to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can i know the way to obtain a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can i know the way to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can i know the way to obtain a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can i know the steps to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can i know the steps to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can i know the procedure to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can i know the procedure to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you please tell me the way to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you please tell me the way to obtain a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you please tell me the way to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you please tell me the way to obtain a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you please tell me the steps to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you please tell me the steps to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you please tell me the procedure to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you please tell me the procedure to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you tell me the way to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you tell me the way to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you tell me the steps to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you tell me the steps to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you tell me the procedure to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "can you tell me the procedure to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "is there any way to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "is there any way to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "i want a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "i want a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "i need a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "i need a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "what do i need to do to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "what do i need to do to obtain a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "what do i need to do to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "what do i need to do to obtain a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "what do i have to do to get a new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "what do i have to do to get a new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "new nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "new national identity card"
+      },
+      {
+        "intent": "new_nic",
+        "text": "to get a new nic,what do i need to do"
+      },
+      {
+        "intent": "new_nic",
+        "text": "to get a new national identity card,what do i need to do"
+      },
+      {
+        "intent": "new_nic",
+        "text": "to get a new nic,what do i have to do"
+      },
+      {
+        "intent": "new_nic",
+        "text": "to get a new national identity card,what do i have to do"
       },
       {
         "intent": "lost_license",
         "text": "i lost my driving license"
       },
       {
+        "intent": "lost_license",
+        "text": "driving license lost"
+      },
+      {
+        "intent": "lost_license",
+        "text": "my driving license has gone missing"
+      },
+      {
+        "intent": "lost_license",
+        "text": "my driving license has been missing"
+      },
+      {
+        "intent": "lost_license",
+        "text": "my driving license went missing"
+      },
+      {
         "intent": "new_license",
         "text": "how can i get a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "how can i obtain a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "i need to get a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "i need to obtain a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "i want to get a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "i want to obtain a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "can i know the way to get a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "can i know the way to obtain a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "can you please tell me the way to get a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "can you please tell me the way to obtain a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "can you tell me the way to get a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "can you tell me the way to obtain a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "is there any way to get a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "i want a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "i need a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "what do i need to do to get a new driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "what do i need to do to obtain a new driving license"
       },
       {
         "intent": "goodbye",

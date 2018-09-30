@@ -1,12 +1,6 @@
 package com.learn.controller;
 
-import java.util.List;
-
 import com.learn.model.UserMessage;
-import org.apache.jena.query.*;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.iri.impl.Main;
-import org.apache.jena.util.FileManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,8 +23,7 @@ public class Controller {
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET)
-    public List<BotMessage> listComment() {
-
+    public String listComment() {
         return botService.listComments();
     }
 }
