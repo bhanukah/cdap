@@ -8,6 +8,6 @@ message = message = "lost my driving license"
 if len(sys.argv) > 1:
 	message = sys.argv[1];
 
-interpreter = Interpreter.load("./models/current/nlu")
+interpreter = Interpreter.load("./target/classes/models/current/nlu")
 result = interpreter.parse(message)
 print(json.dumps(result, indent=2))

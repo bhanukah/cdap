@@ -20,7 +20,7 @@ public class Controller {
     @Autowired
     private BotService botService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST)
     public BotMessage createComment(@RequestBody UserMessage userMessage) {
 

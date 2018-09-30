@@ -38,7 +38,7 @@ public class BotServiceImpl implements BotService {
 
 
         try {
-            res = nlp2(userMessage.getMessage());
+            res = intentClassifier(userMessage.getMessage());
             //res = googleQ("police", "Dehiwala");
         } catch (IOException e) {
             e.printStackTrace();
@@ -73,6 +73,44 @@ public class BotServiceImpl implements BotService {
         System.out.println("Done.");
 
         p.destroy();
+        return result;
+    }
+
+    private String intentClassifier (String message) throws IOException, InterruptedException {
+        ClassLoader classLoader = getClass().getClassLoader();
+        String result = "";
+        boolean isError = false;
+        String path  = classLoader.getResource("predict.py").getPath();
+        String command = "cmd /c python -W ignore "+path.substring(1)+ " \""+message+"\"";
+        Process p = Runtime.getRuntime().exec(command);
+        p.waitFor();
+        BufferedReader bri = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        BufferedReader bre = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+        String line;
+        StringBuffer response = new StringBuffer();
+        while ((line = bri.readLine()) != null) {
+            response.append(line);
+        }
+        bri.close();
+        while ((line = bre.readLine()) != null) {
+            System.out.println(line);
+            isError = true;
+        }
+        bre.close();
+        p.waitFor();
+        System.out.println("Done.");
+        p.destroy();
+
+        if (isError) {
+            return "Error Occurred";
+        }
+        try {
+            JSONObject myResponse = new JSONObject(response.toString());
+            JSONObject intent = myResponse.getJSONObject("intent");
+            result = intent.getString("name");
+        } catch (Exception e) {
+            result = "Sorry, I didn't understand what you said. :(";
+        }
         return result;
     }
 
@@ -116,7 +154,7 @@ public class BotServiceImpl implements BotService {
     }
 
 
-    List<BotMessage> getVehicleData(String Vehicletype, String brand){
+    List<BotMessage> getVehicleData(String act1, String act2){
         System.out.println("event fires");
         List<BotMessage> list= new java.util.ArrayList<BotMessage>();
         String queryString ="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
