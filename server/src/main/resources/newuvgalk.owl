@@ -1,0 +1,328 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#"
+     xml:base="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-19="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#MissingDrivingLicense -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#MissingDrivingLicense"/>
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#MissingNIC -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#MissingNIC"/>
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#NewDrivingLicense -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#NewDrivingLicense"/>
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#NewNIC -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#NewNIC"/>
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#OffCrossing -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#OffCrossing"/>
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#OnCrossing -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#OnCrossing"/>
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#OnVehicle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#OnVehicle"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Accident -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Accident"/>
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Citizenship -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Citizenship"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#DrivingLicense -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#DrivingLicense">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Citizenship"/>
+        <MissingDrivingLicense>Step 1 : The person concerned has to go to the Police Station to make a complaint.
+Step 2 : The person concerned requests for an extract of complaint form once the statement is written by the Police officer.
+Note 01 : The Police station charges Rs.25.00 for each page of extracted complaint
+Step 3 : The police officer issues the Extract of complain form to the person concerned.
+Step 4 : The person concerned has to fill in the form issued by the Department of Motor Vehicles along with attach support documents and hand it over to the Department of Motor Vehicles.
+Note 01 : Support documents have to be brought based on the department&apos;s requests.
+Step 5 : The officer at Department of Motor Vehicles verifies the application with the relevant police station before certifying the application request. 
+Step 6 : The person concerned has to collect the Driving License from the Department of Motor vehicles.
+
+Qualification Criteria
+Any citizen or foreigner based in Sri Lanka to acquire this service at a time of need.
+
+Submission Procedure
+Visit Respective Police Station
+
+The person concerned should visit the respective police station to make a complain 
+Police Station
+Working Hours
+24 / 7 / 365 Days
+
+Obtain Extract Copy of Complain
+The person concerned should make sure that he / she gets an extract of complaint copy from the local police station depending on item he/she has lost.
+
+Some departments which require extract of complaints are listed below:
+
+National Identity Card	Grama Niladari / Department of Registration of Persons
+Passport	Department of Immigration and Emigration
+Driving Licenses	Department of Motor Vehicles</MissingDrivingLicense>
+        <NewDrivingLicense>Step 1: Applicant obtains the application form “M.T.A. 30” from:
+
+District secretarial offices (normal service)
+Main office in – Colombo (priority service)
+Step 2: Applicant submits the filled form directed to Assistant Commissioner, along with required documents to:
+
+District secretarial offices (normal service)
+Main office in Verahera – Colombo (priority service)
+Step 3: Applicant sits for the written examination on the call of Department
+Step 4: Applicant does the practical examination on the call of the Department. Pass result attained at this examination will be valid till 6 months
+Step 5: Department issues the Temporary License, which is valid up to 6 months (at the point of passing the practical examination)
+Step 6: Department issues the License (license will be sent to the applicant by post)
+
+
+Note:
+If Applicant Fails the Written Examination:
+Applicant can re apply for the written examination by paying Rs.100.00 up to three times
+
+If the Applicant Fails the Practical Examination:
+Applicant can re apply for the practical examination by making the full payment up to three times
+
+Please refer to section: “Special Cases”
+
+Eligibility
+Any applicant being a permanent resident within Sri Lanka can apply for this service
+
+Following are the conditions required to obtain the service:
+
+Applicant being a citizen of Sri Lanka
+Applicant being over 18 years of age
+Sitting for a written test and a practical examinations
+Produce with a certification of identity at both written and practical examinations
+Passing of both above examinations
+Provide with all the documents required within the process (please refer to the section: “Documents Required”)
+Duration between the submission of the application and the practical test, been less than six months
+Note: Any applicant who is not able to meet with above conditions will be considered disqualified from obtaining the service.
+
+Submission Procedure
+All the applications should be directed to the assistant commissioner of the Licensing Division
+
+Assistant Commissioner – Licensing Division,
+Department of Motor Traffic,
+P.O Box 533, 581-341, Elvitigala Mawatha,
+Colombo 5.
+
+
+Note 1: Applicants are given the facility of obtaining licenses through:
+
+All district secretarial offices (normal service)
+Main office in Verahera – Colombo (priority service)
+
+Application Form
+Form “M.T.A. 30”: Application for License to Drive a Motor Vehicle
+
+Time Line
+
+Process Timeline:
+
+Applied for priority service	License issued within 1 week
+Applied for normal service	License issued within 2 week – 3 months
+
+Submission Timeline:
+For Obtaining &amp; Submitting Application Forms:
+
+Working days	Mondays to Fridays
+Counter open hours	9:30 am to 3:30 pm (Normal)
+Counter open hours	9:30 am to 12:30 pm (Priority)
+Holidays	All Public and Mercantile Days
+
+Validity Timeline:
+Validity of the application expires if the practical examination is performed after 6 months of submitting the application
+
+Costs Related to Service
+
+Cost of Obtaining the Application:
+Application forms provided free of charge
+
+
+Fee:
+
+Type of Service	1 Class of Vehicles	2 Class of Vehicles	3 Class of Vehicles
+Normal service	Rs. 620.00	Rs. 1020.00	Rs. 1120.00
+Priority service	Rs. 1020.00	Rs. 1770.00	Rs. 1870.00
+
+Penalty:
+No penalties involved in the process of issuing licensesSurcharge:
+At failing on the written test, an applicant must pay Rs. 100.00 for re applying (only valid for three re-applies)
+At failing on the practical test, an applicant must make the full payment for re applying (only valid for three re-applies)
+
+
+Support Documents Required
+
+For Light Vehicles:
+
+The original and a photocopy of the Birth Certificate
+National Identity Card / Original and a photocopy of a valid Passport, containing NIC number
+Three copies of black and white photos of size: 2*2
+Medical certification, from a MBBS certified Medical Officer
+
+For Heavy Vehicles:
+
+The original and a photocopy of the Birth Certificate
+National Identity Card / Original and a photocopy of a valid Passport, containing NIC number
+Three copies of black and white photos of size: 2*2 ”
+A Medical Certification issued by the C.T.B Medical Institute, Nugegoda or by Medical Officer of the applicant’s residential district
+A Certification of Competency issued by a grade “A” registered driving school</NewDrivingLicense>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#NIC -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#NIC">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Citizenship"/>
+        <MissingNIC>Step 1 : The person concerned has to go to the Police Station to make a complaint.
+Step 2 : The person concerned requests for an extract of complaint form once the statement is written by the Police officer.
+Note : The Police station charges Rs.25.00 for each page of extracted complaint
+Step 3 : The police officer along with the extract of complaint issues the form issued by the Department of Registration of Persons to the person concerned.
+Step 4 : The person concerned has to fill in the form issued by the Department of Registrations of Persons along with, attach two photos and get it certified by the Grama Niladari , Divisional Secretariat and the respective Police station. 
+Note 01 : The Grama Niladari verifies the application with the relevant police station before certifying the application request.
+Note 02 : The person concerned has to get his / her application request certified by the respective authorities in their own divisions.
+Step 5 : The person concerned has to submit certified application to the Grama Niladari. 
+Step 6 : The Grama Niladari submits certified application to the Divisional Secretarial Who in turn submits the application to the Department of Registration of Persons.
+Step 7 : The person concerned has to collect the National Identity card either from the Grama Niladari Office or the person will receive the National Identity Card by Registered Post if he/she has provided a stamped envelope to the Grama Niladari.
+
+Qualification Criteria
+Any citizen or foreigner based in Sri Lanka to acquire this service at a time of need.
+
+Submission Procedure
+Visit Respective Police Station
+The person concerned should visit the respective police station to make a complain
+Police Station
+Working Hours
+24 / 7 / 365 Days
+
+Obtain Extract Copy of Complain
+The person concerned should make sure that he / she gets an extract of complaint copy from the local police station depending on item he/she has lost.
+Some departments which require extract of complaints are listed below:
+
+National Identity Card	Grama Niladari / Department of Registration of Persons
+Passport	Department of Immigration and Emigration
+Driving Licenses	Department of Motor Vehicles</MissingNIC>
+        <NewNIC>Step 1 : The person concerned has to go to the Police Station to make a complaint.
+Step 2 : The person concerned requests for an extract of complaint form once the statement is written by the Police officer.
+Note : The Police station charges Rs.25.00 for each page of extracted complaint
+Step 3 : The police officer along with the extract of complaint issues the form issued by the Department of Registration of Persons to the person concerned.
+Step 4 : The person concerned has to fill in the form issued by the Department of Registrations of Persons along with, attach two photos and get it certified by the Grama Niladari , Divisional Secretariat and the respective Police station. 
+Note 01 : The Grama Niladari verifies the application with the relevant police station before certifying the application request.
+Note 02 : The person concerned has to get his / her application request certified by the respective authorities in their own divisions.
+Step 5 : The person concerned has to submit certified application to the Grama Niladari. 
+Step 6 : The Grama Niladari submits certified application to the Divisional Secretarial Who in turn submits the application to the Department of Registration of Persons.
+Step 7 : The person concerned has to collect the National Identity card either from the Grama Niladari Office or the person will receive the National Identity Card by Registered Post if he/she has provided a stamped envelope to the Grama Niladari.
+
+Qualification Criteria
+Any citizen or foreigner based in Sri Lanka to acquire this service at a time of need.
+
+Submission Procedure
+Visit Respective Police Station
+The person concerned should visit the respective police station to make a complain
+Police Station
+Working Hours
+24 / 7 / 365 Days
+
+Obtain Extract Copy of Complain
+The person concerned should make sure that he / she gets an extract of complaint copy from the local police station depending on item he/she has lost.
+Some departments which require extract of complaints are listed below:
+
+National Identity Card	Grama Niladari / Department of Registration of Persons
+Passport	Department of Immigration and Emigration
+Driving Licenses	Department of Motor Vehicles</NewNIC>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Pedestrian -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Pedestrian">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Accident"/>
+        <OffCrossing>Test offcrossing</OffCrossing>
+        <OnCrossing>Test offcrossing</OnCrossing>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Vehicle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Vehicle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Accident"/>
+        <OnVehicle>Test OnVehicle</OnVehicle>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

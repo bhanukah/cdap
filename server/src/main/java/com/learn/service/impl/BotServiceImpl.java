@@ -107,7 +107,7 @@ public class BotServiceImpl implements BotService {
 
     private ResultSet sparqlTest(String queryString) {
         FileManager.get().addLocatorClassLoader(Main.class.getClassLoader());
-        Resource res = resourceLoader.getResource("classpath:newestvehicleold.owl");
+        Resource res = resourceLoader.getResource("classpath:newuvgalk.owl");
         Model model = FileManager.get().loadModel(res.getFilename());
         Query query= QueryFactory.create(queryString);
         QueryExecution queryExecution= QueryExecutionFactory.create(query,model);
@@ -119,27 +119,23 @@ public class BotServiceImpl implements BotService {
     List<BotMessage> getVehicleData(String Vehicletype, String brand){
         System.out.println("event fires");
         List<BotMessage> list= new java.util.ArrayList<BotMessage>();
-        String queryString ="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX owl: <http://www.w3.org/2002/07/owl#> " +
-                "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
-                "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " +
-                "PREFIX : <http://www.example.com/vehicles/> " +
-                "SELECT ?vehicle ?transmission ?sheet ?engine ?end ?start " +
-                "WHERE {?sub rdfs:subClassOf :"+Vehicletype+" . " +
-                "?vehicle a  ?sub. " +
-                "?vehicle :hasTransmissionType ?transmission. " +
-                "?vehicle :numberOfSheets ?sheet . " +
-                "?vehicle :hasEngineCapacity ?engine. " +
-                "?vehicle :hasManufacturer :"+brand+" . " +
-                "?vehicle :hasPrice ?p ." +
-                "?p :startPrice ?start ." +
-                "?p :endPrice ?end}";
+        String queryString ="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
+                "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n" +
+                "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
+                "PREFIX myPre: <http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#>\n" +
+                "\n" +
+                "SELECT *\n" +
+                "WHERE {\n" +
+                "  myPre:DrivingLicense myPre:NewDrivingLicense ?object\n" +
+                "}";
         ResultSet resultSet=sparqlTest(queryString);
         while(resultSet.hasNext()){
             BotMessage vehicle;
             QuerySolution querySolution= resultSet.nextSolution();
             try{
-                vehicle = new BotMessage(querySolution.getResource("transmission").getLocalName(), querySolution.getResource("vehicle").getLocalName());
+                //vehicle = new BotMessage(querySolution.getResource("transmission").getLocalName(), querySolution.getResource("vehicle").getLocalName());
+                vehicle = new BotMessage("jj", querySolution.get("?object").toString());
             }catch(Exception ex){
                 System.out.println(ex);
                 continue;

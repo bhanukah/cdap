@@ -1,0 +1,163 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "greet",
+        "text": "hey"
+      },
+      {
+        "intent": "greet",
+        "text": "howdy"
+      },
+      {
+        "intent": "greet",
+        "text": "hey there"
+      },
+      {
+        "intent": "greet",
+        "text": "hello"
+      },
+      {
+        "intent": "greet",
+        "text": "hi"
+      },
+      {
+        "intent": "greet",
+        "text": "good morning"
+      },
+      {
+        "intent": "greet",
+        "text": "good evening"
+      },
+      {
+        "intent": "greet",
+        "text": "dear sir"
+      },
+      {
+        "intent": "affirm",
+        "text": "yes"
+      },
+      {
+        "intent": "affirm",
+        "text": "yep"
+      },
+      {
+        "intent": "affirm",
+        "text": "yeah"
+      },
+      {
+        "intent": "affirm",
+        "text": "indeed"
+      },
+      {
+        "intent": "affirm",
+        "text": "that's right"
+      },
+      {
+        "intent": "affirm",
+        "text": "ok"
+      },
+      {
+        "intent": "affirm",
+        "text": "great"
+      },
+      {
+        "intent": "affirm",
+        "text": "right, thank you"
+      },
+      {
+        "intent": "affirm",
+        "text": "correct"
+      },
+      {
+        "intent": "affirm",
+        "text": "great choice"
+      },
+      {
+        "intent": "affirm",
+        "text": "sounds really good"
+      },
+      {
+        "intent": "deny",
+        "text": "no"
+      },
+      {
+        "intent": "deny",
+        "text": "nope"
+      },
+      {
+        "intent": "deny",
+        "text": "no thanks"
+      },
+      {
+        "intent": "deny",
+        "text": "i dont think so"
+      },
+      {
+        "intent": "lost_nic",
+        "text": "i lost my nic"
+      },
+      {
+        "intent": "new_nic",
+        "text": "how can i get a new id"
+      },
+      {
+        "intent": "lost_license",
+        "text": "i lost my driving license"
+      },
+      {
+        "intent": "new_license",
+        "text": "how can i get a new driving license"
+      },
+      {
+        "intent": "goodbye",
+        "text": "bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "goodbye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "good bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "stop"
+      },
+      {
+        "intent": "goodbye",
+        "text": "end"
+      },
+      {
+        "intent": "goodbye",
+        "text": "farewell"
+      },
+      {
+        "intent": "goodbye",
+        "text": "Bye bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "have a good one"
+      }
+    ],
+    "regex_features": [
+      {
+        "name": "greet",
+        "pattern": "hey[^\\s]*"
+      }
+    ],
+    "lookup_tables": [],
+    "entity_synonyms": [
+      {
+        "value": "lose",
+        "synonyms": [
+          "lost",
+          "stolen",
+          "missplaced"
+        ]
+      }
+    ]
+  }
+}
