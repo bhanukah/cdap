@@ -1,31 +1,28 @@
 package com.learn.service.impl;
 
-import java.io.*;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
-import org.springframework.core.io.Resource;
-import com.learn.model.UserMessage;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ResourceLoader;
-import org.springframework.stereotype.Service;
-
 import com.learn.model.BotMessage;
+import com.learn.model.UserMessage;
 import com.learn.repository.BotMessageRepository;
 import com.learn.service.BotService;
-
+import org.apache.jena.iri.impl.Main;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
-import org.apache.jena.iri.impl.Main;
 import org.apache.jena.util.FileManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Service;
+import org.json.JSONObject;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.*;
+import java.util.List;
 
 @Service
 public class BotServiceImpl implements BotService {
+
+    private String apikey = "AIzaSyAVQDRXX9IITM9DWv_0PgqbGjb-pUX25AE";
 
     @Autowired
     private BotMessageRepository botMessageRepository;
@@ -42,6 +39,7 @@ public class BotServiceImpl implements BotService {
 
         try {
             res = nlp2(userMessage.getMessage());
+            //res = googleQ("police", "Dehiwala");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -50,6 +48,7 @@ public class BotServiceImpl implements BotService {
         return new BotMessage("1231231212", res);
         //return botMessageRepository.save(userMessage);
     }
+
 
     private String nlp2 (String message) throws IOException, InterruptedException {
         ClassLoader classLoader = getClass().getClassLoader();
@@ -75,6 +74,30 @@ public class BotServiceImpl implements BotService {
 
         p.destroy();
         return result;
+    }
+
+    private String googleQ (String type, String area) throws IOException {
+        String q = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input="+type
+                +"%20"+area+"&inputtype=textquery&fields=formatted_address,name,opening_hours,geometry&key="+apikey;
+        String ret = "";
+
+        URL obj = new URL(q);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        con.setRequestMethod("GET");
+        int responseCode = con.getResponseCode();
+        System.out.println("Response Code : " + responseCode);
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+        JSONObject myResponse = new JSONObject(response.toString());
+
+        //return response.toString();
+        return myResponse.getString("status");
     }
 
     public List<BotMessage> listComments() {

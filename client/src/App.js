@@ -24,8 +24,9 @@ class Header extends Component {
     super(props);
     this.state = {
       links: [
+        {path: "/", text: "Home", isActive: true},
         {path: "/1", text: "Chatbot", isActive: false},
-        {path: "/2", text: "About", isActive: false},
+        {path: "/2", text: "About", isActive: false}
       ]
     }
   }
@@ -42,8 +43,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light  bg-light">
-          <Link className="navbar-brand" to="/">Home</Link>
+        <nav className="navbar navbar-expand-lg navbar-light navbarmain bg-light">
           <ul className="navbar-nav">
             {this.state.links.map((link, i) => 
               <NavLink 
@@ -66,12 +66,14 @@ class NavLink extends Component {
   render() {
       return (
         <li className={"nav-item " + (this.props.isActive ? "active": "")}>
+        <a>
                   <Link 
                     className="nav-link" 
                     to={this.props.path}
                     onClick={() => this.props.onClick()}
                   >
               {this.props.text}</Link>
+              </a>
         </li>
       );
   }

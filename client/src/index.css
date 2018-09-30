@@ -11,8 +11,8 @@ body {
  @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,900);
 
  :root {
-   --primary-color: black;
-   --secondary-color: gray;
+   --primary-color: rgb(0, 37, 160);
+   --secondary-color: rgb(0, 87, 58);
  
    --border-radius: 10px;
    --icon-size: 50px;
@@ -39,9 +39,13 @@ body {
  }
  .messages-wrapper {
    background: var(--container-bg);
+   border-radius: 7px 7px 0px 0px;
    position: relative;
    display: flex;
    flex-direction: column-reverse;
+ }
+ .chatcontainer {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
  .messages {
    width: 100%;
@@ -137,6 +141,7 @@ body {
  }
  .text-input {
    border-style: none;
+   border-radius: 0px 0px 0px 7px;
    color: var(--primary-color);
    font-family: var(--font-family);
    font-size: var(--font-size);
@@ -145,6 +150,7 @@ body {
  }
  .btn-send {
    border: none;
+   border-radius: 0px 0px 7px 0px;
    background-color: var(--primary-color);
    color: var(--font-color);
    display: flex;
@@ -224,7 +230,7 @@ body {
 }
 
 .chatback {
-  background-image: radial-gradient(rgb(228, 228, 228), rgb(241, 241, 241), rgb(255, 255, 255));
+  background-image: radial-gradient(rgb(219, 219, 219), rgb(214, 214, 214), rgb(255, 255, 255));
   min-height: 72vh;
 }
 
@@ -240,4 +246,23 @@ body {
 
 .mainbanner {
   margin-bottom: 0;
+}
+
+.navbarmain {
+  background-image: linear-gradient(rgb(221, 221, 221), rgb(246, 246, 246), rgb(221, 221, 221));
+}
+
+nav ul {
+  margin: 0 10px;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav li {
+  margin-right: 40px;
+  display: inline-block;
+}
+
+nav a {
+  font-weight: 800;
 }

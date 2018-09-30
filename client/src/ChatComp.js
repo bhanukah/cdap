@@ -37,6 +37,8 @@ class ChatComp extends Component {
       this.handleSubmitText = this.handleSubmitText.bind(this);
       this.handleToggle = this.handleToggle.bind(this);
     }
+
+
   
     appendMessage(text, isUser = false, next = () => {}) {
       let messages = this.state.messages.slice();
@@ -56,6 +58,10 @@ class ChatComp extends Component {
     }
   
     processResponse(text) {
+      if (!text || text == undefined) {
+        this.processResponse("An Error occured :(");
+        return;
+      }
       const messages = text
         .match(/[^.!?]+[.!?]*/g)
         .map(str => str.trim());
@@ -85,20 +91,9 @@ class ChatComp extends Component {
     handleSubmitText(text) {
   
       // append user text
-      this.appendMessage(text, true);
-
-
-  
-      // fetch bot text, process as queue
-      if (true) {
-        this.getResponse(text)
-          .then(this.processResponse);
-      } else if (this.props.getResponse) {
-        this.props.getResponse(text)
-          .then(this.processResponse);
-      } else {
-        this.processResponse('Sorry, I\'m not configured to respond. :\'(')
-      }
+      this.appendMessage(text, true);  
+      this.getResponse(text)
+        .then(this.processResponse);
     }
   
     handleResize(e) {
@@ -136,7 +131,7 @@ class ChatComp extends Component {
       return (
         <div className="container" style={this.state.isVisible ? {display: 'block'} : {display: 'none'}}>
           <br/>
-          <div style={this.state.isOpen ? {minHeight: `${this.state.dialogHeight}px`} : {maxHeight: 0, overflow: 'hidden'}}>
+          <div className="chatcontainer" style={this.state.isOpen ? {minHeight: `${this.state.dialogHeight}px`} : {maxHeight: 0, overflow: 'hidden'}}>
             <ChatBox messages={this.state.messages}
                     isBotTyping={this.state.isBotTyping}
                     isUserHidden={this.props.isUserHidden}
