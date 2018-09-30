@@ -69,7 +69,7 @@ public class BotServiceImpl implements BotService {
         String response = "Sorry, I don't understand.";
 
         if (intent.equals("error")) {
-            return "Error occurred. :(";
+            return "Sorry, I don't understand.";
         }
         if (intent.equals("greet")) {
             if (chatObject.getId() != null){
@@ -81,6 +81,8 @@ public class BotServiceImpl implements BotService {
                 chatObjectRepo.delete(chatObject.getId());
             }
             return  "Bye, have a nice day. :)";
+        } else if (chatObject.getId() == null && (intent.equals("affirm") || intent.equals("deny"))){
+            return  "Sorry, I don't understand.";
         }
         if (chatObject.getContext() == null &&
                 (intent.equals("new_nic") || intent.equals("lost_nic") || intent.equals("new_license") || intent.equals("lost_license"))) {
@@ -142,7 +144,9 @@ public class BotServiceImpl implements BotService {
     private String getSteps(QueryObject queryObject) {
         String res = "";
         for (InstObject x: queryObject.steps){
-            res += x.name+"\n"+x.instruction+"\n";
+            if (x != null) {
+                res += x.name + "\n" + x.instruction + "\n";
+            }
         }
         return res;
     }
@@ -199,12 +203,17 @@ public class BotServiceImpl implements BotService {
         p.destroy();
 
         if (isError) {
-            return "Error Occurred";
+            return "error";
         }
         try {
             JSONObject myResponse = new JSONObject(response.toString());
             JSONObject intent = myResponse.getJSONObject("intent");
-            result = intent.getString("name");
+            float conf = intent.getFloat("confidence");
+            if (conf > 0.5) {
+                result = intent.getString("name");
+            }else {
+                result = "error";
+            }
         } catch (Exception e) {
             result = "error";
         }

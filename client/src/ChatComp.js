@@ -68,7 +68,7 @@ class ChatComp extends Component {
         return;
       }
       const messages = text
-        .match(/[^.!?]+[.!?]*/g)
+        .match(/[^\n!?]+[\n!?]*/g)
         .map(str => str.trim());
       this.botQueue = this.botQueue.concat(messages);
   
