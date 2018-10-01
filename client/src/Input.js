@@ -6,17 +6,17 @@ class Input extends Component {
 		super(props);
 		this.state = {value: ''};
 
-		//this.handleAudio = this.handleAudio.bind(this);
+		this.handleAudio = this.handleAudio.bind(this);
 		this.handleChange = this.handleChange.bind(this);
-		//this.handleListen = this.handleListen.bind(this);
+		this.handleListen = this.handleListen.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	
-	/*handleAudio(e) {
+	handleAudio(e) {
 		const last = e.results.length - 1;
 		const value = this.state.value + e.results[last][0].transcript;
 		this.setState({value});
-	}*/
+	}
 
 	handleChange(e) {
 		const value = e.target.value;
@@ -26,9 +26,9 @@ class Input extends Component {
 		this.setState({value});
 	}
 
-	/*handleListen() {
-		this.audio.listen();
-	}*/
+	handleListen() {
+		//this.audio.listen();
+	}
 
 	handleSubmit(e) {
 		e.preventDefault();
@@ -54,12 +54,12 @@ class Input extends Component {
 							 onChange={this.handleChange}
 							 autoComplete={'false'}
 							 required />
-				{/* <button className="btn-voice"
+				{ <button className="btn-voice"
 								type="button"
 								value="Voice"
 								onClick={this.handleListen}>
 					<EntypoMic/>
-				</button> */}
+				</button> }
 				<button className="btn-send"
 								type="submit"
 								value="Send">

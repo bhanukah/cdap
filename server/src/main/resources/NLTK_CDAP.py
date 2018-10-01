@@ -26,44 +26,15 @@ if len(sys.argv) > 1:
 #text = "what is the procedure for getting a driving licence"
 #text = "I lost my NIC what should I do?"
 
-
-# In[3]:
-
-
 sentences =sent_tokenize(text)
-
-
-# In[4]:
-
 
 words = word_tokenize(text)
 
-
-# In[5]:
-
-
-# In[6]:
-
-
 postagged = pos_tag(words)
-
-
-# In[7]:
-
 
 tags = pos_tag(words)
 
-
-# In[8]:
-
-
 chunk = ne_chunk(tags)
-
-
-# In[9]:
-
-
-# In[10]:
 
 
 from nltk.corpus import stopwords
@@ -71,7 +42,6 @@ stopwords.words('english')
 
 
 # In[11]:
-
 
 clean_tokens = words[:]
 sr = stopwords.words('english')
@@ -84,16 +54,8 @@ freq = nltk.FreqDist(clean_tokens)
 #    print (str(key) + ':' + str(val))
 
 
-
-# In[12]:
-
-
-from nltk.corpus import wordnet
-syn = wordnet.synsets("pain")
-
-
-
-# In[13]:
+#from nltk.corpus import wordnet
+#syn = wordnet.synsets("pain")
 
 
 from nltk.stem import PorterStemmer
@@ -104,9 +66,6 @@ stemmed = []
 for token in clean_tokens:
     stemmed.append(stemmer.stem(token))
 
-# In[14]:
-
-
 from nltk.stem import WordNetLemmatizer
  
 lemmatizer = WordNetLemmatizer()
@@ -116,6 +75,7 @@ postagged = pos_tag(clean_tokens)
 
 numrows = len(postagged)    # rows 
 numcols = len(postagged[0]) # columns 
+string1 = ""
 
 for i in range(0,numrows):
     type = "x"
@@ -134,9 +94,11 @@ for i in range(0,numrows):
     
     if type == "x":
         lemmatized.append(postagged[i][0])
+        string1 = string1 + postagged[i][0] + " "
     else:
         #print("f")
         lemmatized.append(lemmatizer.lemmatize(postagged[i][0], pos=type))
+        string1 = string1 + postagged[i][0] + " "
 
-print(lemmatized)
-
+#print(lemmatized)
+print(string1)

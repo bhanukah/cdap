@@ -9,6 +9,7 @@ import org.apache.jena.iri.impl.Main;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.util.FileManager;
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,7 @@ public class BotServiceImpl implements BotService {
         System.out.println("User Message - id: "+userMessage.getId()+" message: "+userMessage.getMessage());
         String intent = "";
         String res = "";
+        String message;
 
         ChatObject chatObj = chatObjectRepo.findOne(userMessage.getId());
 
@@ -47,10 +49,13 @@ public class BotServiceImpl implements BotService {
         }
 
         try {
-            intent = intentClassifier(userMessage.getMessage());
+            message = nlp2(userMessage.getMessage());
+            intent = intentClassifier(message);
+
+            //intent = intentClassifier(userMessage.getMessage());
             System.out.println(intent);
             res = genOutput(chatObj, intent);
-            //res = googleQ("police station", "Dehiwala");
+            res = googleQ("police%20station", "Dehiwala");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -241,6 +246,17 @@ public class BotServiceImpl implements BotService {
         JSONObject myResponse = new JSONObject(response.toString());
 
         //return response.toString();
+        String satatus = myResponse.getString("status");
+        if (satatus.equals("OK")){
+            JSONArray resArray= myResponse.getJSONArray("candidates");
+            if (resArray.length()>0){
+                JSONObject resAddress = resArray.getJSONObject(0);
+                return resAddress.getString("formatted_address");
+            } else {
+                return "no results found.";
+            }
+        }
+
         return myResponse.getString("status");
     }
 
