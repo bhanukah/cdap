@@ -541,7 +541,7 @@ Version:        1.0.0
 .scrollspy-sidenav.sidebar-menu.nav > li > a:hover,
 .scrollspy-sidenav.sidebar-menu.nav > li.active > a:focus {
     background: none;
-    color: #e7604a !important;
+    color: #2c3e84 !important;
     font-weight: 600 !important;
 }
 
@@ -565,13 +565,13 @@ ul.sidebar-menu > li.always-active .sidebar-menu-child {
 
 ul.sidebar-menu > li.always-active > a {
     font-weight: 600;
-    color: #e7604a;
+    color: #2c3e84;
     padding-left: 20px !important;
 }
 
 ul.sidebar-menu > li.always-active > a:after {
     left: 0;
-    color: #e7604a;
+    color: #2c3e84;
 }
 
 .sidebar-menu-child.nav li {
@@ -600,7 +600,7 @@ ul.sidebar-menu > li.always-active > a:after {
 .sidebar-menu-child.nav a:hover,
 .sidebar-menu-child.nav .active a:focus {
     background: none;
-    color: #e7604a !important;
+    color: #2c3e84 !important;
     font-weight: 600 !important;
 }
 
@@ -812,7 +812,7 @@ input[type='radio'] + label:hover::before,
 input[type='checkbox'] + label:hover::before,
 input[type='radio']:checked + label:before,
 input[type='checkbox']:checked + label:before {
-    color: #e7604a;
+    color: #2c3e84;
 }
 
 
@@ -2619,7 +2619,7 @@ body.modal-open,
     border: 0;
     font-size: 14px;
     width: 100%;
-    background: #e7604a;
+    background: #2c3e84;
     color: #FFF;
 }
 
@@ -2704,9 +2704,9 @@ body.modal-open,
 .bootstrap-select.open > .dropdown-toggle.btn-default:hover,
 .bootstrap-select.open > .dropdown-toggle.btn-default:focus,
 .bootstrap-select.open > .dropdown-toggle.btn-default.focus {
-    color: #e7604a;
+    color: #2c3e84;
     background: none;
-    border-color: #e7604a;
+    border-color: #2c3e84;
     -webkit-box-shadow: none;
     box-shadow: none;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
@@ -2748,11 +2748,11 @@ body.modal-open,
 
 .bootstrap-select.open .dropdown-toggle .caret {
     border-width: 0 4px 6px 4px;
-    border-color: transparent transparent #e7604a;
+    border-color: transparent transparent #2c3e84;
 }
 
 .bootstrap-select .dropdown-menu li.selected a {
-    color: #e7604a;
+    color: #2c3e84;
 }
 
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
@@ -2761,7 +2761,7 @@ body.modal-open,
     top: 11px;
     right: 10px;
     margin: 0;
-    color: #e7604a;
+    color: #2c3e84;
 }
 
 .bootstrap-select.btn-group .dropdown-menu li a.opt {
@@ -3221,9 +3221,9 @@ body.modal-open,
 }
 
 #back-to-top a:hover {
-    background-color: #e7604a;
+    background-color: #2c3e84;
     color: #FFF;
-    border-color: #e7604a;
+    border-color: #2c3e84;
 }
 
 
@@ -4372,14 +4372,14 @@ body.modal-open,
 .irs-bar {
     height: 6px;
     top: 25px;
-    background: #e7604a;
+    background: #2c3e84;
 }
 
 .irs-bar-edge {
     top: 25px;
     height: 6px;
     width: 14px;
-    background: #e7604a;
+    background: #2c3e84;
     border-radius: 3px;
 }
 
@@ -4400,7 +4400,7 @@ body.modal-open,
     border-radius: 3px;
     top: 20px;
     background: #FFF;
-    border: 2px solid #e7604a;
+    border: 2px solid #2c3e84;
     -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -4506,8 +4506,8 @@ div.jfilestyle input {
 
 div.jfilestyle label {
     display: inline-block;
-    border: 1px solid #e7604a;
-    background: #e7604a;
+    border: 1px solid #2c3e84;
+    background: #2c3e84;
     color: #FFF;
     vertical-align: middle;
     line-height: normal;
@@ -4557,8 +4557,8 @@ div.jfilestyle label[disabled] {
 
 div.jfilestyle label:hover {
     cursor: pointer;
-    background: #d45742;
-    border-color: #d45742;
+    background: #4281d4;
+    border-color: #4281d4;
 }
 
 div.jfilestyle .count-jfilestyle {

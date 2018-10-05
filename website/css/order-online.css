@@ -51,13 +51,13 @@ html {
     line-height: 34px;
     padding-bottom: 5px;
     font-weight: 400;
-    color: #e7604a;
+    color: #2c3e84;
 }
 
 .ui-order-btn i {
-    border: 2px solid #e7604a;
+    border: 2px solid #2c3e84;
     padding: 3px 4px;
-    color: #e7604a;
+    color: #2c3e84;
     border-radius: 50%;
 }
 
@@ -364,7 +364,7 @@ tr.subtotal td.price {
     padding-right: 11px;
 }
 tr.total {
-    background: #e7604a;
+    background: #2c3e84;
     color: #fff;
 }
 tr.total td {
@@ -576,7 +576,7 @@ tr.orderdata-title td {
     font-size: 23px;
     margin-top: 3px;
     font-weight: 400;
-    color: #e7604a;
+    color: #2c3e84;
 }
 
 .orderhistory-total.clearfix h2 span.amount {
@@ -637,15 +637,15 @@ tr.orderdata-title td {
 }
 
 td.file-view .fa {
-    color: #e7604a;
+    color: #2c3e84;
 }
 
 td.cross-td a {
     font-size: 9px;
     padding: 2px 4px;
     border-radius: 22px;
-    color: #e7604a;
-    border: 2px solid #e7604a;
+    color: #2c3e84;
+    border: 2px solid #2c3e84;
     font-weight: bold;
     text-decoration: none;
 }
@@ -656,7 +656,7 @@ td.cross-td a {
 
 .amont-td i {
     display: none;
-    color: #e7604a;
+    color: #2c3e84;
     font-size: 22px;
 }
 
@@ -670,7 +670,7 @@ td.cross-td a {
 
 .chefonline-close-circle {
     font-weight: bold;
-    color: #e7604a;
+    color: #2c3e84;
     font-size: 16px;
     background: #fff;
 }
@@ -725,7 +725,7 @@ td.cross-td.custom-spinner {
 }
 
 button.btn.btn-default.cust-plus {
-    background: #e7604a;
+    background: #2c3e84;
     color: #fff;
     border: 0;
     height: auto;
@@ -751,14 +751,14 @@ button.btn.btn-default.cust-plus {
 }
 
 .custom-checkout {
-    background: #e7604a;
-    border: 1px solid #e7604a;
+    background: #2c3e84;
+    border: 1px solid #2c3e84;
 }
 
 .custom-checkout:hover,
 .custom-checkout:active {
-    background: #d45742;
-    border: 1px solid #d45742;
+    background: #4281d4;
+    border: 1px solid #4281d4;
 }
 
 .cart-info .cart-table table tr.total-pound td.itme-td {
@@ -815,7 +815,7 @@ button.btn.btn-default.cust-plus {
 
 .category-list li a:hover,
 .category-list li.active a {
-    color: #e7604a !important;
+    color: #2c3e84 !important;
     padding-left: 7px;
     padding-right: 3px;
 }
@@ -832,7 +832,7 @@ button.btn.btn-default.cust-plus {
 }
 .mobile-btn-checkout {
     display: block;
-    background-color: #e7604a;
+    background-color: #2c3e84;
     color: #ffffff;
     border-radius: 0;
     outline: 0;
@@ -859,7 +859,7 @@ button.btn.btn-default.cust-plus {
 }
 
 .mobile-cart-item a {
-    color: #e7604a;
+    color: #2c3e84;
     display: block;
     text-decoration: none;
 }
@@ -1127,16 +1127,16 @@ button.btn.btn-default.cust-plus {
     transition: all 0.50s ease-in-out;
 }
 .user-login-info li a:hover, .user-login-info li a:active, .user-login-info li a:focus{
-    color: #e7604a;
+    color: #2c3e84;
     text-decoration: none;
 }
 .user-login-info li a i {
-    color: #e7604a;
+    color: #2c3e84;
     margin-right: 2px;
     margin-left: 2px;
 }
 .order-online-top-header .btn-back a {
-    background:  #e7604a none repeat scroll 0 0;
+    background:  #2c3e84 none repeat scroll 0 0;
     border-radius: 2px;
     color: #fff;
     font-weight: 400;
@@ -1165,10 +1165,10 @@ button.btn.btn-default.cust-plus {
     text-decoration: none;
 }
 .order-online-tab-nav li.active a {
-    color: #e7604a;
+    color: #2c3e84;
     text-decoration: none;
     outline: none;
-    border-bottom: 1px solid #e7604a;
+    border-bottom: 1px solid #2c3e84;
 }
 
 
@@ -1196,7 +1196,7 @@ button.btn.btn-default.cust-plus {
 
 .contact-details.thankyou > span .fa {
     color: #fff;
-    background: #e7604a;
+    background: #2c3e84;
     padding: 15px 14px 12px 14px;
     font-size: 28px;
     border-radius: 14em;
@@ -1239,14 +1239,14 @@ tr.orderdata-title td {
     padding-right: 10%;
 }
 td.file-view .fa {
-    color: #e7604a;
+    color: #2c3e84;
 }
 td.cross-td a {
     font-size: 9px;
     padding: 2px 4px;
     border-radius: 22px;
-    color: #e7604a;
-    border: 2px solid #e7604a;
+    color: #2c3e84;
+    border: 2px solid #2c3e84;
     font-weight: bold;
     text-decoration: none;
 }
@@ -1257,7 +1257,7 @@ td.cross-td a {
 .hobtr:hover .ic{ display: block; }
 .chefonline-close-circle {
     font-weight: bold;
-    color: #e7604a;
+    color: #2c3e84;
     font-size: 16px;
     background: #fff;
 }
@@ -1285,7 +1285,7 @@ input.form-control.increse-val {
 }
 td.cross-td.custom-spinner{ position: relative; }
 button.btn.btn-default.cust-plus {
-    background: #e7604a;
+    background: #2c3e84;
     color: #fff;
     border: 0;
 }
