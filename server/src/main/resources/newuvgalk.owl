@@ -22,6 +22,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Age"/>
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Death -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Death"/>
+    
+
+
     <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#MissingDrivingLicense -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#MissingDrivingLicense"/>
@@ -75,15 +87,15 @@
     
 
 
-    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Accident -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Accident"/>
-    
-
-
     <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Citizenship -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Citizenship"/>
+    
+
+
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Employment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Employment"/>
     
 
 
@@ -191,6 +203,107 @@ Main office in – Colombo (priority service)&quot;
     
 
 
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#EPF -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#EPF">
+        <rdf:type rdf:resource="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Employment"/>
+        <Age>{
+  &quot;steps&quot;: [
+    {
+      &quot;name&quot;: &quot;Step 1&quot;,
+      &quot;instruction&quot;: &quot;Application can be obtained from “L” branch on the 8th floor of the Head office or every zonal office by producing Employees’ provident fund membership numbers, National Identity Card (if any) / National Identity Card number and death certificate. Website: labourdept.gov.lk &quot;
+    },
+    {
+      &quot;name&quot;: &quot;Step 2&quot;,
+      &quot;instruction&quot;: &quot;Completed application form should, by the member himself/herself, be handed over to the nearest District labour office or labour sub office in the district where he/she resides, during the office hours of a working day.&quot;
+    }
+  ],
+  &quot;prereq&quot;: [ 
+   {
+      &quot;name&quot;: &quot;Req1&quot;,
+      &quot;instruction&quot;: &quot;Are you a male employee and 55 years of age is completed?&quot;
+    },
+	   {
+      &quot;name&quot;: &quot;Req2&quot;,
+      &quot;instruction&quot;: &quot;Are you a female employee and 50 years of age is completed?&quot;
+    }
+  ],
+  &quot;extra&quot;: [
+ {
+  &quot;question&quot;: &quot;Do you want to download the documents?&quot;,
+  &quot;answer&quot;: &quot;http://labourdept.gov.lk/images/PDF_upload/ApplicationForms/EPF/l%20form.pdf&quot;
+ },
+ {
+  &quot;question&quot;: &quot;Do you want to know the directions to the nearest office?&quot;,
+  &quot;answer&quot;: &quot;Labour office&quot;
+ }
+  ],
+  &quot;info: []
+}</Age>
+        <Death>{
+  &quot;steps&quot;: [
+    {
+      &quot;name&quot;: &quot;Step 1&quot;,
+      &quot;instruction&quot;: &quot;Application can be obtained from “L” branch on the 8th floor of the Head office or every zonal office by producing Employees’ provident fund membership numbers, National Identity Card (if any) / National Identity Card number and death certificate. Website: labourdept.gov.lk &quot;
+    },
+    {
+      &quot;name&quot;: &quot;Step 2&quot;,
+      &quot;instruction&quot;: &quot;Completed application form should, by the member himself/herself, be handed over to the nearest District labour office or labour sub office in the district where he/she resides, during the office hours of a working day.&quot;
+    }
+  ],
+  &quot;prereq&quot;: [ ],
+  &quot;extra&quot;: [
+ {
+  &quot;question&quot;: &quot;Do you want to download the documents?&quot;,
+  &quot;answer&quot;: &quot;http://labourdept.gov.lk/images/PDF_upload/ApplicationForms/EPF/l%20form.pdf&quot;
+ },
+ {
+  &quot;question&quot;: &quot;Do you want to know the directions to the nearest office?&quot;,
+  &quot;answer&quot;: &quot;Labour office&quot;
+ }
+  ],
+  &quot;info: [
+ {
+  &quot;question&quot;: &quot;Are you married ?&quot;,
+  &quot;affrim&quot;: &quot;Benefits will be paid to valid nominee or in the absence of a nominee benefits will be paid to spouse and/or children.&quot;,
+  &quot;deny&quot;: &quot;Benefits will be paid to nominees or in the absence of nominees, benefits will be paid to heirs.&quot;
+ }
+  ]
+}</Death>
+        <Death>{
+  &quot;steps&quot;: [
+    {
+      &quot;name&quot;: &quot;Step 1&quot;,
+      &quot;instruction&quot;: &quot;Application can be obtained from “L” branch on the 8th floor of the Head office or every zonal office by producing Employees’ provident fund membership numbers, National Identity Card (if any) / National Identity Card number and death certificate. Website: labourdept.gov.lk &quot;
+    },
+    {
+      &quot;name&quot;: &quot;Step 2&quot;,
+      &quot;instruction&quot;: &quot;Completed application form should, by the member himself/herself, be handed over to the nearest District labour office or labour sub office in the district where he/she resides, during the office hours of a working day.&quot;
+    }
+  ],
+  &quot;prereq&quot;: [ ],
+  &quot;extra&quot;: [
+ {
+  &quot;question&quot;: &quot;Do you want to download the documents?&quot;,
+  &quot;answer&quot;: &quot;http://labourdept.gov.lk/images/PDF_upload/ApplicationForms/EPF/l%20form.pdf&quot;
+ },
+ {
+  &quot;question&quot;: &quot;Do you want to know the directions to the nearest office?&quot;,
+  &quot;answer&quot;: &quot;sdfsdfdfsdfsf&quot;
+ }
+  ],
+  &quot;info: [
+ {
+  &quot;question&quot;: &quot;Are you married ?&quot;,
+  &quot;affrim&quot;: &quot;Benefits will be paid to valid nominee or in the absence of a nominee benefits will be paid to spouse and/or children.&quot;,
+  &quot;deny&quot;: &quot;Benefits will be paid to nominees or in the absence of nominees, benefits will be paid to heirs.&quot;
+ }
+  ]
+}</Death>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#NIC -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#NIC">
@@ -269,7 +382,6 @@ Note 02 : The person concerned has to get his / her application request certifie
     <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Pedestrian -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Pedestrian">
-        <rdf:type rdf:resource="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Accident"/>
         <OffCrossing>Test offcrossing</OffCrossing>
         <OnCrossing>Test offcrossing</OnCrossing>
     </owl:NamedIndividual>
@@ -279,7 +391,6 @@ Note 02 : The person concerned has to get his / her application request certifie
     <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Vehicle -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Vehicle">
-        <rdf:type rdf:resource="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Accident"/>
         <OnVehicle>Test OnVehicle</OnVehicle>
     </owl:NamedIndividual>
 </rdf:RDF>
