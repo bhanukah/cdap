@@ -89,7 +89,7 @@
         "entities": []
       },
       {
-        "text": "right, thank you",
+        "text": "right",
         "intent": "affirm",
         "entities": []
       },
@@ -592,6 +592,30 @@
         "text": "have a good one",
         "intent": "goodbye",
         "entities": []
+      },
+	  {
+        "text": "i am looking police station near dehiwala",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 33,
+            "end": 41,
+            "value": "dehiwala",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near dehiwala",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "dehiwala",
+            "entity": "location"
+          }
+        ]
       }
     ]
   }
