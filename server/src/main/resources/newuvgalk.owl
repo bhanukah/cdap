@@ -148,8 +148,8 @@ Note : The Police station charges Rs.25.00 for each page of extracted complaint&
       &quot;name&quot;: &quot;Req1&quot;,
       &quot;instruction&quot;: &quot;Are you a citizen or foreigner based in Sri Lanka to acquire this service at a time of need?&quot;
     }
-  ]
-  
+  ],
+ 
    &quot;extra&quot;: [],
   &quot;info&quot;: []
 }</MissingDrivingLicense>
@@ -200,7 +200,7 @@ Main office in – Colombo (priority service)&quot;
       &quot;name&quot;: &quot;Req2&quot;,
       &quot;instruction&quot;: &quot;Are you over 18 years of age?&quot;
     }
-  ]
+  ],
   &quot;extra&quot;: [],
   &quot;info&quot;: []
 }</NewDrivingLicense>
@@ -319,7 +319,7 @@ Note 02 : The person concerned has to get his / her application request certifie
       &quot;name&quot;: &quot;Req1&quot;,
       &quot;instruction&quot;: &quot;Are you a citizen or foreigner based in Sri Lanka to acquire this service at a time of need?&quot;
     }
-  ]
+  ],
   &quot;extra&quot;: [],
   &quot;info&quot;: []
 }</MissingNIC>
@@ -346,7 +346,7 @@ Note 02 : The person concerned has to get his / her application request certifie
       &quot;name&quot;: &quot;Req2&quot;,
       &quot;instruction&quot;: &quot;Have you attained 16 years of age?&quot;
     }
-  ]
+  ],
   &quot;extra&quot;: [],
   &quot;info&quot;: []
 }</NewNIC>
