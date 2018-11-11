@@ -49,7 +49,7 @@ public class BotServiceImpl implements BotService {
         try {
             System.out.println("before formatted" + userMessage.getMessage());
             message = nlp2(userMessage.getMessage());
-            if(message == null) {
+            if(message == null || message == "") {
                 message = userMessage.getMessage();
             }
             System.out.println("formatted" + message);
@@ -92,6 +92,8 @@ public class BotServiceImpl implements BotService {
         } else if (chatObject.getId() == null && (intent.equals("affirm") || intent.equals("deny"))){
             return  "Sorry, I don't understand.";
         }
+
+        //first output after intent recognition
         if (chatObject.getContext() == null &&
                 (intent.equals("new_nic") || intent.equals("lost_nic") || intent.equals("new_license") || intent.equals("lost_license"))) {
             chatObject.setContext(intent);
@@ -126,6 +128,9 @@ public class BotServiceImpl implements BotService {
 
     private QueryObject gatIntentData(String intent){
         QueryObject res = null;
+        if (intent == null) {
+            return null;
+        }
         if (intent.equals("new_nic")) {
             res = getData("NIC", "NewNIC");
         }else if (intent.equals("lost_nic")) {
