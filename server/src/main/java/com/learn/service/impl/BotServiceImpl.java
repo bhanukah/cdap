@@ -14,8 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 import org.json.JSONObject;
-
-import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -49,13 +47,18 @@ public class BotServiceImpl implements BotService {
         }
 
         try {
+            System.out.println("before formatted" + userMessage.getMessage());
             message = nlp2(userMessage.getMessage());
+            if(message == null) {
+                message = userMessage.getMessage();
+            }
+            System.out.println("formatted" + message);
             intent = intentClassifier(message);
 
             //intent = intentClassifier(userMessage.getMessage());
-            System.out.println(intent);
+            System.out.println("intent" + intent);
             res = genOutput(chatObj, intent);
-            res = googleQ("police%20station", "Dehiwala");
+            //res = googleQ("police%20station", "Dehiwala");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -214,7 +217,8 @@ public class BotServiceImpl implements BotService {
             JSONObject myResponse = new JSONObject(response.toString());
             JSONObject intent = myResponse.getJSONObject("intent");
             float conf = intent.getFloat("confidence");
-            if (conf > 0.5) {
+            System.out.println("Confidence : " + conf);
+            if (conf > 0.4) {
                 result = intent.getString("name");
             }else {
                 result = "error";

@@ -49,7 +49,7 @@ for token in words:
     if token in stopwords.words('english'):
         clean_tokens.remove(token)
 
-freq = nltk.FreqDist(clean_tokens)
+#freq = nltk.FreqDist(clean_tokens)
 #for key,val in freq.items():
 #    print (str(key) + ':' + str(val))
 
@@ -100,5 +100,6 @@ for i in range(0,numrows):
         lemmatized.append(lemmatizer.lemmatize(postagged[i][0], pos=type))
         string1 = string1 + postagged[i][0] + " "
 
-#print(lemmatized)
+
+print(lemmatized)
 print(string1)

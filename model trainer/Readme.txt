@@ -4,4 +4,4 @@ python -m rasa_nlu.train -c nlu_config.yml --data traindat.json -o models --fixe
 
 
 -- Test
-python -W ignore predict.py
+python -W ignore predict.py "user message"
