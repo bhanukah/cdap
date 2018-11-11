@@ -351,7 +351,13 @@ Note 02 : The person concerned has to get his / her application request certifie
       &quot;instruction&quot;: &quot;Have you attained 16 years of age?&quot;
     }
   ],
-  &quot;extra&quot;: [],
+  &quot;extra&quot;: [
+ {
+  &quot;question&quot;: &quot;Do you want to download the documents?&quot;,
+  &quot;answer&quot;: &quot;http://www.drp.gov.lk/Download/Application%20DRP.pdf&quot;
+  &quot;type&quot;: &quot;document&quot;
+ }
+],
   &quot;info&quot;: []
 }</NewNIC>
     </owl:NamedIndividual>
