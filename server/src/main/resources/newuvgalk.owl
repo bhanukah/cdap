@@ -233,10 +233,12 @@ Main office in – Colombo (priority service)&quot;
  {
   &quot;question&quot;: &quot;Do you want to download the documents?&quot;,
   &quot;answer&quot;: &quot;http://labourdept.gov.lk/images/PDF_upload/ApplicationForms/EPF/l%20form.pdf&quot;
+  &quot;type&quot;: &quot;document&quot;
  },
  {
   &quot;question&quot;: &quot;Do you want to know the directions to the nearest office?&quot;,
   &quot;answer&quot;: &quot;Labour office&quot;
+  &quot;type&quot; : &quot;direction&quot;
  }
   ],
   &quot;info&quot;: []
@@ -257,10 +259,12 @@ Main office in – Colombo (priority service)&quot;
  {
   &quot;question&quot;: &quot;Do you want to download the documents?&quot;,
   &quot;answer&quot;: &quot;http://labourdept.gov.lk/images/PDF_upload/ApplicationForms/EPF/l%20form.pdf&quot;
+  &quot;type&quot;: &quot;document&quot;
  },
  {
   &quot;question&quot;: &quot;Do you want to know the directions to the nearest office?&quot;,
   &quot;answer&quot;: &quot;Labour office&quot;
+  &quot;type&quot; : &quot;direction&quot;
  }
   ],
   &quot;info&quot;: [
