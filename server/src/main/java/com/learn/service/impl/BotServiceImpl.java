@@ -94,12 +94,16 @@ public class BotServiceImpl implements BotService {
         }
 
         //first output after intent recognition
-        if (chatObject.getContext() == null &&
-                (intent.equals("new_nic") || intent.equals("lost_nic") || intent.equals("new_license") || intent.equals("lost_license"))) {
+        if (chatObject.getContext() == null && (intent.equals("unclear_epf"))){
+            return  "Is it regarding an event of death of a member or completion of age?";
+        }
+        else if (chatObject.getContext() == null &&
+                (intent.equals("new_nic") || intent.equals("lost_nic") || intent.equals("new_license") || intent.equals("lost_license")
+                || intent.equals("epf_death") || intent.equals("epf_age"))) {
             chatObject.setContext(intent);
             chatObject.setApproved("true");
             QueryObject res = gatIntentData(intent);
-            String temp = getNextMessage(res, chatObject);
+            String temp = getPreReqMessage(res, chatObject);
             if (temp != null){
                 return temp;
             }
@@ -107,7 +111,7 @@ public class BotServiceImpl implements BotService {
         }else if (chatObject.getId() != null && chatObject.getContext() != null &&
                  (intent.equals("affirm") || intent.equals("deny"))) {
             QueryObject res = gatIntentData(chatObject.getContext());
-            String temp = getNextMessage(res, chatObject);
+            String temp = getPreReqMessage(res, chatObject);
             if (intent.equals("deny")) {
                 chatObject.setApproved("false");
             }
@@ -139,11 +143,15 @@ public class BotServiceImpl implements BotService {
             res = getData("DrivingLicense", "NewDrivingLicense");
         }else if (intent.equals("lost_license")) {
             res = getData("DrivingLicense", "MissingDrivingLicense");
+        }else if (intent.equals("epf_death")) {
+            res = getData("EPF", "Death");
+        }else if (intent.equals("epf_age")) {
+            res = getData("EPF", "Age");
         }
         return res;
     }
 
-    private String getNextMessage(QueryObject queryObject, ChatObject chatObject) {
+    private String getPreReqMessage(QueryObject queryObject, ChatObject chatObject) {
         String res = "";
         if (chatObject.getStep() != 0 && queryObject.prereq.size() == chatObject.getStep()){
             return null;

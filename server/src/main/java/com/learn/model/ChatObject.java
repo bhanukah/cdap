@@ -24,6 +24,8 @@ public class ChatObject {
 
     private String approved;
 
+    private String currType;
+
     private  int step;
 
     public String getId() {
@@ -56,5 +58,13 @@ public class ChatObject {
 
     public void setStep(int step) {
         this.step = step;
+    }
+
+    public String getCurrType() {
+        return currType;
+    }
+
+    public void setCurrType(String currType) {
+        this.currType = currType;
     }
 }

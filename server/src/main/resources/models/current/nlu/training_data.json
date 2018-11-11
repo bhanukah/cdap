@@ -63,7 +63,7 @@
       },
       {
         "intent": "affirm",
-        "text": "right, thank you"
+        "text": "right"
       },
       {
         "intent": "affirm",
@@ -464,6 +464,502 @@
       {
         "intent": "goodbye",
         "text": "have a good one"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "i want to know some information related to payment of epf benefits"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "i want to know some information regarding payment of epf benefits"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "i want to know some information related to epf benefits"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "i want to know some information regarding epf benefits"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "i want to know some information related to epf payments"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "i want to know some information regarding epf payments"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "i want to know something related to payment of epf benefits"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "i want to know something regarding payment of epf benefits"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "can i know some information related to payment of epf benefits?"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "can i know some information regarding payment of epf benefits?"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "can i know some information related to epf benefits?"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "can i know some information regarding epf benefits?"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "can i know some information related to epf payments?"
+      },
+      {
+        "intent": "unclear_epf",
+        "text": "can i know some information regarding epf payments?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "i want to know some information related to epf payments in event of death"
+      },
+      {
+        "intent": "epf_death",
+        "text": "i want to know some information regarding epf payments in event of death"
+      },
+      {
+        "intent": "epf_death",
+        "text": "i want to know some information related to epf payments in event of death of a member"
+      },
+      {
+        "intent": "epf_death",
+        "text": "i want to know some information regarding epf payments in event of death of a member"
+      },
+      {
+        "intent": "epf_death",
+        "text": "i want to know some information related to epf benefits in event of death"
+      },
+      {
+        "intent": "epf_death",
+        "text": "i want to know some information regarding epf benefits in event of death"
+      },
+      {
+        "intent": "epf_death",
+        "text": "i want to know some information related to epf benefits in event of death of a member"
+      },
+      {
+        "intent": "epf_death",
+        "text": "i want to know some information regarding epf benefits in event of death of a member"
+      },
+      {
+        "intent": "epf_death",
+        "text": "i want to know some information related to payment of epf benefits in event of death of a member"
+      },
+      {
+        "intent": "epf_death",
+        "text": "i want to know some information regarding payment of epf benefits in event of death of a member"
+      },
+      {
+        "intent": "epf_death",
+        "text": "can i know some information related to payment of epf benefits in event of death of a member?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "can i know some information regarding payment of epf benefits in event of death of a member?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "can i know some information related to epf benefits in event of death of a member?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "can i know some information regarding epf benefits in event of death of a member?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "can i know some information related to epf payments in event of death of a member?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "can i know some information regarding epf payments in event of death of a member?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "can i know some information related to payment of epf benefits in event of death?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "can i know some information regarding payment of epf benefits in event of death?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "can i know some information related to epf benefits in event of death?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "can i know some information regarding epf benefits in event of death?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "can i know some information related to epf payments in event of death?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "can i know some information regarding epf payments in event of death?"
+      },
+      {
+        "intent": "epf_death",
+        "text": "event of death"
+      },
+      {
+        "intent": "epf_death",
+        "text": "event of death of a member"
+      },
+      {
+        "intent": "epf_death",
+        "text": "death"
+      },
+      {
+        "intent": "epf_death",
+        "text": "death of a member"
+      },
+      {
+        "intent": "epf_death",
+        "text": "member death"
+      },
+      {
+        "intent": "epf_death",
+        "text": "event of member death"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information related to payment of epf benefits upon completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information regarding payment of epf benefits upon completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information related to epf benefits upon completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information regarding epf benefits upon completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information related to epf payments upon completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information regarding epf payments upon completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information related to payment of epf benefits on completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information regarding payment of epf benefits on completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information related to epf benefits on completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information regarding epf benefits on completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information related to epf payments on completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information regarding epf payments on completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information related to payment of epf benefits upon age completion"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information regarding payment of epf benefits upon age completion"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information related to epf benefits upon age completion"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information regarding epf benefits upon age completion"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information related to epf payments upon age completion"
+      },
+      {
+        "intent": "epf_age",
+        "text": "i want to know some information regarding epf payments upon age completion"
+      },
+      {
+        "intent": "epf_age",
+        "text": "can i know some information related to payment of epf benefits upon completion of age?"
+      },
+      {
+        "intent": "epf_age",
+        "text": "can i know some information regarding payment of epf benefits upon completion of age?"
+      },
+      {
+        "intent": "epf_age",
+        "text": "can i know some information related to epf benefits upon completion of age?"
+      },
+      {
+        "intent": "epf_age",
+        "text": "can i know some information regarding epf benefits upon completion of age?"
+      },
+      {
+        "intent": "epf_age",
+        "text": "can i know some information related to epf payments upon completion of age?"
+      },
+      {
+        "intent": "epf_age",
+        "text": "can i know some information regarding epf payments upon completion of age?"
+      },
+      {
+        "intent": "epf_age",
+        "text": "can i know some information related to payment of epf benefits upon age completion?"
+      },
+      {
+        "intent": "epf_age",
+        "text": "can i know some information regarding payment of epf benefits upon age completion?"
+      },
+      {
+        "intent": "epf_age",
+        "text": "can i know some information related to epf benefits upon age completion?"
+      },
+      {
+        "intent": "epf_age",
+        "text": "can i know some information regarding epf benefits upon age completion?"
+      },
+      {
+        "intent": "epf_age",
+        "text": "can i know some information related to epf payments upon age completion?"
+      },
+      {
+        "intent": "epf_age",
+        "text": "can i know some information regarding epf payments upon age completion?"
+      },
+      {
+        "intent": "epf_age",
+        "text": "completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "upon completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "age completion"
+      },
+      {
+        "intent": "epf_age",
+        "text": "upon age completion"
+      },
+      {
+        "intent": "epf_age",
+        "text": "on completion of age"
+      },
+      {
+        "intent": "epf_age",
+        "text": "on age completion"
+      },
+      {
+        "intent": "epf_age",
+        "text": "age"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 33,
+            "end": 41,
+            "value": "dehiwala",
+            "entity": "location"
+          }
+        ],
+        "text": "i am looking police station near dehiwala"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "dehiwala",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near dehiwala"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 26,
+            "value": "kandy",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near kandy"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 27,
+            "value": "malabe",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near malabe"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "kaduwela",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near kaduwela"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 28,
+            "value": "yakkala",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near yakkala"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 28,
+            "value": "gampaha",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near gampaha"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 28,
+            "value": "kottawa",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near kottawa"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "kohuwala",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near kohuwala"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 31,
+            "value": "wellawatte",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near wellawatte"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "colombo6",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near colombo6"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 28,
+            "value": "wattala",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near wattala"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 26,
+            "value": "jaela",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near jaela"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "maradana",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near maradana"
+      },
+      {
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 25,
+            "value": "fort",
+            "entity": "location"
+          }
+        ],
+        "text": "police stations near fort"
       }
     ],
     "regex_features": [

@@ -593,6 +593,401 @@
         "intent": "goodbye",
         "entities": []
       },
+      {
+        "text": "i want to know some information related to payment of epf benefits",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding payment of epf benefits",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to epf benefits",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding epf benefits",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to epf payments",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding epf payments",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "i want to know something related to payment of epf benefits",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "i want to know something regarding payment of epf benefits",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to payment of epf benefits?",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding payment of epf benefits?",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to epf benefits?",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding epf benefits?",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to epf payments?",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding epf payments?",
+        "intent": "unclear_epf",
+        "entities": []
+      },
+      {
+        "text": "i want to know some information related to epf payments in event of death",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding epf payments in event of death",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to epf payments in event of death of a member",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding epf payments in event of death of a member",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to epf benefits in event of death",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding epf benefits in event of death",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to epf benefits in event of death of a member",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding epf benefits in event of death of a member",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to payment of epf benefits in event of death of a member",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding payment of epf benefits in event of death of a member",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to payment of epf benefits in event of death of a member?",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding payment of epf benefits in event of death of a member?",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to epf benefits in event of death of a member?",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding epf benefits in event of death of a member?",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to epf payments in event of death of a member?",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding epf payments in event of death of a member?",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to payment of epf benefits in event of death?",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding payment of epf benefits in event of death?",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to epf benefits in event of death?",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding epf benefits in event of death?",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to epf payments in event of death?",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding epf payments in event of death?",
+        "intent": "epf_death",
+        "entities": []
+      },
+      {
+        "text": "event of death",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "event of death of a member",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "death",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "death of a member",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "member death",
+        "intent": "epf_death",
+        "entities": []
+      },
+	  {
+        "text": "event of member death",
+        "intent": "epf_death",
+        "entities": []
+      },
+      {
+        "text": "i want to know some information related to payment of epf benefits upon completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding payment of epf benefits upon completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to epf benefits upon completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding epf benefits upon completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to epf payments upon completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding epf payments upon completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to payment of epf benefits on completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding payment of epf benefits on completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to epf benefits on completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding epf benefits on completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to epf payments on completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding epf payments on completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to payment of epf benefits upon age completion",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding payment of epf benefits upon age completion",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to epf benefits upon age completion",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding epf benefits upon age completion",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information related to epf payments upon age completion",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "i want to know some information regarding epf payments upon age completion",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to payment of epf benefits upon completion of age?",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding payment of epf benefits upon completion of age?",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to epf benefits upon completion of age?",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding epf benefits upon completion of age?",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to epf payments upon completion of age?",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding epf payments upon completion of age?",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to payment of epf benefits upon age completion?",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding payment of epf benefits upon age completion?",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to epf benefits upon age completion?",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding epf benefits upon age completion?",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information related to epf payments upon age completion?",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "can i know some information regarding epf payments upon age completion?",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "upon completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "age completion",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "upon age completion",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "on completion of age",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "on age completion",
+        "intent": "epf_age",
+        "entities": []
+      },
+	  {
+        "text": "age",
+        "intent": "epf_age",
+        "entities": []
+      },
 	  {
         "text": "i am looking police station near dehiwala",
         "intent": "police_station",
