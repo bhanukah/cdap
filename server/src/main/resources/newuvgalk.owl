@@ -149,6 +149,9 @@ Note : The Police station charges Rs.25.00 for each page of extracted complaint&
       &quot;instruction&quot;: &quot;Are you a citizen or foreigner based in Sri Lanka to acquire this service at a time of need?&quot;
     }
   ]
+  
+   &quot;extra&quot;: [],
+  &quot;info&quot;: []
 }</MissingDrivingLicense>
         <NewDrivingLicense>{
   &quot;steps&quot;: [
@@ -198,6 +201,8 @@ Main office in – Colombo (priority service)&quot;
       &quot;instruction&quot;: &quot;Are you over 18 years of age?&quot;
     }
   ]
+  &quot;extra&quot;: [],
+  &quot;info&quot;: []
 }</NewDrivingLicense>
     </owl:NamedIndividual>
     
@@ -221,11 +226,7 @@ Main office in – Colombo (priority service)&quot;
   &quot;prereq&quot;: [ 
    {
       &quot;name&quot;: &quot;Req1&quot;,
-      &quot;instruction&quot;: &quot;Are you a male employee and 55 years of age is completed?&quot;
-    },
-	   {
-      &quot;name&quot;: &quot;Req2&quot;,
-      &quot;instruction&quot;: &quot;Are you a female employee and 50 years of age is completed?&quot;
+      &quot;instruction&quot;: &quot;Are you a male employee and 55 years of age is completed or are you a female employee and 50 years of age is completed?&quot;
     }
   ],
   &quot;extra&quot;: [
@@ -238,7 +239,7 @@ Main office in – Colombo (priority service)&quot;
   &quot;answer&quot;: &quot;Labour office&quot;
  }
   ],
-  &quot;info: []
+  &quot;info&quot;: []
 }</Age>
         <Death>{
   &quot;steps&quot;: [
@@ -262,37 +263,7 @@ Main office in – Colombo (priority service)&quot;
   &quot;answer&quot;: &quot;Labour office&quot;
  }
   ],
-  &quot;info: [
- {
-  &quot;question&quot;: &quot;Are you married ?&quot;,
-  &quot;affrim&quot;: &quot;Benefits will be paid to valid nominee or in the absence of a nominee benefits will be paid to spouse and/or children.&quot;,
-  &quot;deny&quot;: &quot;Benefits will be paid to nominees or in the absence of nominees, benefits will be paid to heirs.&quot;
- }
-  ]
-}</Death>
-        <Death>{
-  &quot;steps&quot;: [
-    {
-      &quot;name&quot;: &quot;Step 1&quot;,
-      &quot;instruction&quot;: &quot;Application can be obtained from “L” branch on the 8th floor of the Head office or every zonal office by producing Employees’ provident fund membership numbers, National Identity Card (if any) / National Identity Card number and death certificate. Website: labourdept.gov.lk &quot;
-    },
-    {
-      &quot;name&quot;: &quot;Step 2&quot;,
-      &quot;instruction&quot;: &quot;Completed application form should, by the member himself/herself, be handed over to the nearest District labour office or labour sub office in the district where he/she resides, during the office hours of a working day.&quot;
-    }
-  ],
-  &quot;prereq&quot;: [ ],
-  &quot;extra&quot;: [
- {
-  &quot;question&quot;: &quot;Do you want to download the documents?&quot;,
-  &quot;answer&quot;: &quot;http://labourdept.gov.lk/images/PDF_upload/ApplicationForms/EPF/l%20form.pdf&quot;
- },
- {
-  &quot;question&quot;: &quot;Do you want to know the directions to the nearest office?&quot;,
-  &quot;answer&quot;: &quot;sdfsdfdfsdfsf&quot;
- }
-  ],
-  &quot;info: [
+  &quot;info&quot;: [
  {
   &quot;question&quot;: &quot;Are you married ?&quot;,
   &quot;affrim&quot;: &quot;Benefits will be paid to valid nominee or in the absence of a nominee benefits will be paid to spouse and/or children.&quot;,
@@ -349,6 +320,8 @@ Note 02 : The person concerned has to get his / her application request certifie
       &quot;instruction&quot;: &quot;Are you a citizen or foreigner based in Sri Lanka to acquire this service at a time of need?&quot;
     }
   ]
+  &quot;extra&quot;: [],
+  &quot;info&quot;: []
 }</MissingNIC>
         <NewNIC>{
   &quot;steps&quot;: [
@@ -374,6 +347,8 @@ Note 02 : The person concerned has to get his / her application request certifie
       &quot;instruction&quot;: &quot;Have you attained 16 years of age?&quot;
     }
   ]
+  &quot;extra&quot;: [],
+  &quot;info&quot;: []
 }</NewNIC>
     </owl:NamedIndividual>
     
