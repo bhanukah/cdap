@@ -616,6 +616,162 @@
             "entity": "location"
           }
         ]
+      },
+	  {
+        "text": "police stations near kandy",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 26,
+            "value": "kandy",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near malabe",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 27,
+            "value": "malabe",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near kaduwela",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "kaduwela",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near yakkala",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 28,
+            "value": "yakkala",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near gampaha",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 28,
+            "value": "gampaha",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near kottawa",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 28,
+            "value": "kottawa",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near kohuwala",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "kohuwala",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near wellawatte",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 31,
+            "value": "wellawatte",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near colombo6",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "colombo6",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near wattala",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 28,
+            "value": "wattala",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near jaela",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 26,
+            "value": "jaela",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near maradana",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "maradana",
+            "entity": "location"
+          }
+        ]
+      },
+	  {
+        "text": "police stations near fort",
+        "intent": "police_station",
+        "entities": [
+          {
+            "start": 21,
+            "end": 25,
+            "value": "fort",
+            "entity": "location"
+          }
+        ]
       }
     ]
   }
