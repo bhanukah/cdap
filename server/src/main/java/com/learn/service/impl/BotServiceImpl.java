@@ -24,6 +24,7 @@ import java.util.List;
 public class BotServiceImpl implements BotService {
 
     private String apikey = "AIzaSyAVQDRXX9IITM9DWv_0PgqbGjb-pUX25AE";
+    //private String apikey = "AIzaSyAStMVVXO5z6nI8OcrP-euAqdsgHQrEvfU";
 
     @Autowired
     private BotMessageRepository botMessageRepository;
@@ -39,10 +40,11 @@ public class BotServiceImpl implements BotService {
         String intent = "";
         String res = "";
         String message;
-
+        boolean isNew = false;
         ChatObject chatObj = chatObjectRepo.findOne(userMessage.getId());
 
         if (chatObj == null) {
+            isNew = true;
             chatObj = new ChatObject();
         }
 
@@ -57,12 +59,19 @@ public class BotServiceImpl implements BotService {
 
             //intent = intentClassifier(userMessage.getMessage());
             System.out.println("intent" + intent);
-            res = genOutput(chatObj, intent);
+            res = genOutput(chatObj, intent, userMessage.getMessage());
             //res = googleQ("police%20station", "Dehiwala");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
+        if (!isNew && chatObj.getContext() == null){
+            try {
+                chatObjectRepo.delete(chatObj.getId());
+            } catch (Exception ex) {
+                System.out.println("Delete EX");
+            }
         }
         if(chatObj != null){
             chatObj.setId(userMessage.getId());
@@ -73,18 +82,18 @@ public class BotServiceImpl implements BotService {
         //return botMessageRepository.save(userMessage);
     }
 
-    private String genOutput (ChatObject chatObject, String intent) {
+    private String genOutput (ChatObject chatObject, String intent, String mes) {
         String response = "Sorry, I don't understand.";
 
-        if (intent.equals("error")) {
+        if (intent.equals("error") && !chatObject.getDir.equals("true")) {
             return "Sorry, I don't understand.";
         }
-        if (intent.equals("greet")) {
+        if (intent.equals("greet") && !chatObject.getDir.equals("true")) {
             if (chatObject.getId() != null){
                 chatObjectRepo.delete(chatObject.getId());
             }
             return  "Hi, How can I Help you?";
-        } else if (intent.equals("goodbye")) {
+        } else if (intent.equals("goodbye") && !chatObject.getDir.equals("true")) {
             if (chatObject.getId() != null){
                 chatObjectRepo.delete(chatObject.getId());
             }
@@ -94,40 +103,79 @@ public class BotServiceImpl implements BotService {
         }
 
         //first output after intent recognition
-        if (chatObject.getContext() == null && (intent.equals("unclear_epf"))){
+        if (chatObject.getContext() == null && !chatObject.getDir.equals("true") && (intent.equals("unclear_epf"))){
             return  "Is it regarding an event of death of a member or completion of age?";
         }
-        else if (chatObject.getContext() == null &&
+        else if (chatObject.getContext() == null && !chatObject.getDir.equals("true") &&
                 (intent.equals("new_nic") || intent.equals("lost_nic") || intent.equals("new_license") || intent.equals("lost_license")
                 || intent.equals("epf_death") || intent.equals("epf_age"))) {
             chatObject.setContext(intent);
             chatObject.setApproved("true");
             QueryObject res = gatIntentData(intent);
-            String temp = getPreReqMessage(res, chatObject);
+            String temp = getPreReqMessage(res, chatObject, intent);
+            if (temp != null){
+                return temp;
+            }
+            temp = getInfoMessage(res, chatObject, intent);
             if (temp != null){
                 return temp;
             }
 
-        }else if (chatObject.getId() != null && chatObject.getContext() != null &&
+        }else if (chatObject.getId() != null && chatObject.getContext() != null && (chatObject.getCurrType().equals("PRE") || chatObject.getCurrType().equals("INFO")) &&
                  (intent.equals("affirm") || intent.equals("deny"))) {
             QueryObject res = gatIntentData(chatObject.getContext());
-            String temp = getPreReqMessage(res, chatObject);
-            if (intent.equals("deny")) {
-                chatObject.setApproved("false");
-            }
 
+            if (chatObject.getCurrType().equals("PRE") && intent.equals("deny")) {
+                chatObject.setApproved("false");
+                chatObject = new ChatObject();
+                return "You are not eligible.";
+            }
+            String temp = getPreReqMessage(res, chatObject, intent);
             if (temp != null){
                 return temp;
             }
+
+            temp = getInfoMessage(res, chatObject, intent);
+            if (temp != null){
+                return temp;
+            }
+        }
+
+        if (chatObject.getId() != null && chatObject.getContext() != null && chatObject.getCurrType().equals("EXT") &&
+                (intent.equals("affirm") || intent.equals("deny") || chatObject.getDir.equals("true"))) {
+            QueryObject res = gatIntentData(chatObject.getContext());
+
+            String temp = getExtMessage(res, chatObject, intent, mes);
+            if (temp != null){
+                return temp;
+            }
+            return null;
         }
 
         QueryObject res = gatIntentData(chatObject.getContext());
         if (res != null){
-            response = getSteps(res);
-            chatObject.setContext(null);
+            response = getRemainMsg(res, chatObject, intent);
+            response = response + getSteps(res) + "\n\n";
+            chatObject.setCurrType("EXT");
+            response = response + getExtMessage(res, chatObject, intent, mes);
         }
 
         return response;
+    }
+
+    private String getRemainMsg(QueryObject queryObject, ChatObject chatObject, String intent) {
+        String ret = "";
+        if (chatObject.getPreRemain() != 0){
+            chatObject.setPreRemain(0);
+        } else if (chatObject.getInfoRemain() != 0) {
+            if (intent.equals("affirm")){
+                ret = queryObject.info.get(chatObject.getInfoRemain() - 1).affrim + "\n";
+            } else if (intent.equals("deny")){
+                ret = queryObject.info.get(chatObject.getInfoRemain() - 1).deny + "\n";
+            }
+            chatObject.setInfoRemain(0);
+        }
+        return ret;
     }
 
     private QueryObject gatIntentData(String intent){
@@ -151,14 +199,93 @@ public class BotServiceImpl implements BotService {
         return res;
     }
 
-    private String getPreReqMessage(QueryObject queryObject, ChatObject chatObject) {
-        String res = "";
-        if (chatObject.getStep() != 0 && queryObject.prereq.size() == chatObject.getStep()){
-            return null;
-        }else if (queryObject.prereq.size() > 0){
-            res = queryObject.prereq.get(chatObject.getStep()).instruction;
-            chatObject.setStep(chatObject.getStep() + 1);
+    private String getPreReqMessage(QueryObject queryObject, ChatObject chatObject, String intent) {
+        String res = null;
+        if (chatObject.getCurrType().equals("PRE") && queryObject.prereq.size() != chatObject.getPrestep()){
+            res = queryObject.prereq.get(chatObject.getPrestep()).instruction;
+            chatObject.setPrestep(chatObject.getPrestep() + 1);
+        } else if (chatObject.getCurrType().equals("PRE") && queryObject.prereq.size() == chatObject.getPrestep()){
+            chatObject.setCurrType("INFO");
         }
+
+        return res;
+    }
+
+    private String getInfoMessage(QueryObject queryObject, ChatObject chatObject, String intent) {
+        String res = null;
+        if (chatObject.getCurrType().equals("INFO") && queryObject.info.size() != chatObject.getInfostep()){
+            if (chatObject.getInfostep() > 0) {
+                if (intent.equals("affirm")){
+                    res = queryObject.info.get(chatObject.getInfostep() - 1).affrim + "\n";
+                } else if (intent.equals("deny")){
+                    res = queryObject.info.get(chatObject.getInfostep()  - 1).deny + "\n";
+                }
+            } else {
+                res = "";
+            }
+            res = res + queryObject.info.get(chatObject.getInfostep()).question;
+            chatObject.setInfoRemain(chatObject.getInfostep() + 1);
+            chatObject.setInfostep(chatObject.getInfostep() + 1);
+        } else if (chatObject.getCurrType().equals("INFO") && queryObject.info.size() == chatObject.getInfostep()){
+            chatObject.setCurrType("STEP");
+        }
+
+        return res;
+    }
+
+    private String getExtMessage(QueryObject queryObject, ChatObject chatObject, String intent, String message) {
+        String res = null;
+        if (chatObject.getCurrType().equals("EXT") && queryObject.extra.size() != chatObject.getExtstep()){
+            if (chatObject.getExtstep() > 0) {
+                if (chatObject.getDir.equals("true")){
+                    //res = googleQ(queryObject.extra.get(chatObject.getExtstep() - 1).answer, message);
+                    res = message;
+                    chatObject.getDir = "false";
+                }
+                else if (intent.equals("affirm")){
+                    if (queryObject.extra.get(chatObject.getExtstep() - 1).type.equals("direction")){
+                        res = "What is the name of your city?\n";
+                        chatObject.getDir = "true";
+                    } else {
+                        res = queryObject.extra.get(chatObject.getExtstep() - 1).answer + "\n";
+                    }
+                } else if (intent.equals("deny")){
+                    res = "";
+                }
+            } else {
+                res = "";
+            }
+            if (!chatObject.getDir.equals("true")){
+                res = res + queryObject.extra.get(chatObject.getExtstep()).question;
+                chatObject.setExtRemain(chatObject.getExtstep() + 1);
+                chatObject.setExtstep(chatObject.getExtstep() + 1);
+            }
+
+        } else if (chatObject.getExtRemain() != 0){
+            if (chatObject.getDir.equals("true")){
+                res = googleQ(queryObject.extra.get(chatObject.getExtstep() - 1).answer, message);
+                //res = message;
+                chatObject.getDir = "false";
+            }
+            else if (intent.equals("affirm")){
+                if (queryObject.extra.get(chatObject.getExtstep() - 1).type.equals("direction")){
+                    res = "What is the name of your city?\n";
+                    chatObject.getDir = "true";
+                } else {
+                    res = queryObject.extra.get(chatObject.getExtstep() - 1).answer + "\n";
+                }
+            } else if (intent.equals("deny")){
+                res = "That's all";
+            }
+
+            if (chatObject.getDir.equals("false")){
+                chatObject.setContext(null);
+                chatObject.setInfoRemain(0);
+            }
+        } else if (chatObject.getCurrType().equals("EXT") && queryObject.extra.size() == chatObject.getExtstep()){
+            chatObject.setContext(null);
+        }
+
         return res;
     }
 
@@ -242,24 +369,34 @@ public class BotServiceImpl implements BotService {
         return result;
     }
 
-    private String googleQ (String type, String area) throws IOException {
-        String q = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input="+type
-                +"%20"+area+"&inputtype=textquery&fields=formatted_address,name,opening_hours,geometry&key="+apikey;
-        String ret = "";
+    private String googleQ (String type, String area) {
 
-        URL obj = new URL(q);
-        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-        con.setRequestMethod("GET");
-        int responseCode = con.getResponseCode();
-        System.out.println("Response Code : " + responseCode);
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(con.getInputStream()));
-        String inputLine;
+        String q = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input="+type.replace(" ", "%20")
+                +"%20"+area.replace(" ", "%20")+"&inputtype=textquery&fields=formatted_address,name,opening_hours,place_id&key="+apikey;
+        String ret = "";
         StringBuffer response = new StringBuffer();
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
+        URL obj = null;
+        try {
+            obj = new URL(q);
+
+            HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+            con.setRequestMethod("GET");
+            int responseCode = con.getResponseCode();
+            System.out.println("Response Code : " + responseCode);
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        in.close();
         JSONObject myResponse = new JSONObject(response.toString());
 
         //return response.toString();
@@ -268,7 +405,7 @@ public class BotServiceImpl implements BotService {
             JSONArray resArray= myResponse.getJSONArray("candidates");
             if (resArray.length()>0){
                 JSONObject resAddress = resArray.getJSONObject(0);
-                return resAddress.getString("formatted_address");
+                return resAddress.getString("name") + "\n" + "https://www.google.com/maps/place/?q=place_id:" + resAddress.getString("place_id");
             } else {
                 return "no results found.";
             }

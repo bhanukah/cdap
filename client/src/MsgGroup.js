@@ -4,7 +4,7 @@ const Message = (props) => (
 	<div
 		className="message"
 		style={props.isImageHidden ? {margin: 0} : {}}>
-		{props.text === null ? <TypingAnimation/> : <p>{props.text}</p>}
+		{props.text === null ? <TypingAnimation/> : props.text.includes("http") ? <a href={props.text} target="_blank">{props.text}</a> : <p>{props.text}</p>}
 	</div>
 );
 
