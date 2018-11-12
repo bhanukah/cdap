@@ -55,16 +55,15 @@ for token in words:
 
 
 #from nltk.corpus import wordnet
-#syn = wordnet.synsets("pain")
 
 
-from nltk.stem import PorterStemmer
+#from nltk.stem import PorterStemmer
 
-stemmer = PorterStemmer()
+#stemmer = PorterStemmer()
 stemmed = []
 
-for token in clean_tokens:
-    stemmed.append(stemmer.stem(token))
+#for token in clean_tokens:
+#    stemmed.append(stemmer.stem(token))
 
 from nltk.stem import WordNetLemmatizer
  

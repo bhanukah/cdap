@@ -49,7 +49,7 @@ public class BotServiceImpl implements BotService {
         }
 
         try {
-            System.out.println("before formatted" + userMessage.getMessage());
+            System.out.println("before formatted " + userMessage.getMessage());
             message = nlp2(userMessage.getMessage());
             if(message == null || message == "") {
                 message = userMessage.getMessage();
@@ -177,7 +177,7 @@ public class BotServiceImpl implements BotService {
         }
         return ret;
     }
-
+// generating query
     private QueryObject gatIntentData(String intent){
         QueryObject res = null;
         if (intent == null) {
@@ -198,7 +198,7 @@ public class BotServiceImpl implements BotService {
         }
         return res;
     }
-
+    // generating pre requisist
     private String getPreReqMessage(QueryObject queryObject, ChatObject chatObject, String intent) {
         String res = null;
         if (chatObject.getCurrType().equals("PRE") && queryObject.prereq.size() != chatObject.getPrestep()){
@@ -210,7 +210,7 @@ public class BotServiceImpl implements BotService {
 
         return res;
     }
-
+    // generating info messages
     private String getInfoMessage(QueryObject queryObject, ChatObject chatObject, String intent) {
         String res = null;
         if (chatObject.getCurrType().equals("INFO") && queryObject.info.size() != chatObject.getInfostep()){
@@ -232,7 +232,7 @@ public class BotServiceImpl implements BotService {
 
         return res;
     }
-
+    // generating extra content
     private String getExtMessage(QueryObject queryObject, ChatObject chatObject, String intent, String message) {
         String res = null;
         if (chatObject.getCurrType().equals("EXT") && queryObject.extra.size() != chatObject.getExtstep()){
@@ -298,7 +298,7 @@ public class BotServiceImpl implements BotService {
         }
         return res;
     }
-
+    // calling text simplification script
     private String nlp2 (String message) throws IOException, InterruptedException {
         ClassLoader classLoader = getClass().getClassLoader();
         String result = "";
@@ -324,7 +324,7 @@ public class BotServiceImpl implements BotService {
         p.destroy();
         return result;
     }
-
+    // calling classification script
     private String intentClassifier (String message) throws IOException, InterruptedException {
         ClassLoader classLoader = getClass().getClassLoader();
         String result;
@@ -368,7 +368,7 @@ public class BotServiceImpl implements BotService {
         }
         return result;
     }
-
+// get google map api output
     private String googleQ (String type, String area) {
 
         String q = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input="+type.replace(" ", "%20")
@@ -419,7 +419,7 @@ public class BotServiceImpl implements BotService {
         QueryObject res = getData("NIC", "NewNIC");
         return res.steps.get(0).instruction;
     }
-
+// ontology query
     private ResultSet sparqlTest(String queryString) {
         FileManager.get().addLocatorClassLoader(Main.class.getClassLoader());
         Resource res = resourceLoader.getResource("classpath:newuvgalk.owl");
@@ -430,7 +430,7 @@ public class BotServiceImpl implements BotService {
         return resultSet;
     }
 
-
+// get ontology data
     QueryObject getData(String act1, String act2){
         QueryObject queryObject = null;
         System.out.println("event fires");
