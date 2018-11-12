@@ -238,8 +238,8 @@ public class BotServiceImpl implements BotService {
         if (chatObject.getCurrType().equals("EXT") && queryObject.extra.size() != chatObject.getExtstep()){
             if (chatObject.getExtstep() > 0) {
                 if (chatObject.getDir.equals("true")){
-                    //res = googleQ(queryObject.extra.get(chatObject.getExtstep() - 1).answer, message);
-                    res = message;
+                    res = googleQ(queryObject.extra.get(chatObject.getExtstep() - 1).answer, message);
+                    //res = message;
                     chatObject.getDir = "false";
                 }
                 else if (intent.equals("affirm")){
