@@ -87,6 +87,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Accidents -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Accidents"/>
+    
+
+
     <!-- http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Citizenship -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/uvgalk/ontologies/2018/8/untitled-ontology-19#Citizenship"/>
@@ -262,14 +268,14 @@ Main office in – Colombo (priority service)&quot;
   &quot;type&quot;: &quot;document&quot;
  },
  {
-  &quot;question&quot;: &quot;Do you want to know the directions to the nearest office?&quot;,
+  &quot;question&quot;: &quot;Do you want to know the directions to the nearest district labour office?&quot;,
   &quot;answer&quot;: &quot;Labour office&quot;,
   &quot;type&quot; : &quot;direction&quot;
  }
   ],
   &quot;info&quot;: [
  {
-  &quot;question&quot;: &quot;Are you married ?&quot;,
+  &quot;question&quot;: &quot;Is the member married ?&quot;,
   &quot;affrim&quot;: &quot;Benefits will be paid to valid nominee or in the absence of a nominee benefits will be paid to spouse and/or children.&quot;,
   &quot;deny&quot;: &quot;Benefits will be paid to nominees or in the absence of nominees, benefits will be paid to heirs.&quot;
  }
@@ -324,7 +330,14 @@ Note 02 : The person concerned has to get his / her application request certifie
       &quot;instruction&quot;: &quot;Are you a citizen or foreigner based in Sri Lanka to acquire this service at a time of need?&quot;
     }
   ],
-  &quot;extra&quot;: [],
+&quot;extra&quot;: [
+
+ {
+  &quot;question&quot;: &quot;Do you want to know the directions to the nearest Police Station?&quot;,
+  &quot;answer&quot;: &quot;police station&quot;,
+  &quot;type&quot; : &quot;direction&quot;
+ }
+  ],
   &quot;info&quot;: []
 }</MissingNIC>
         <NewNIC>{
