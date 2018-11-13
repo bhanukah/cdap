@@ -23,8 +23,8 @@ import java.util.List;
 @Service
 public class BotServiceImpl implements BotService {
 
-    private String apikey = "AIzaSyAVQDRXX9IITM9DWv_0PgqbGjb-pUX25AE";
-    //private String apikey = "AIzaSyAStMVVXO5z6nI8OcrP-euAqdsgHQrEvfU";
+    private String apikey = "";
+    //private String apikey = "";
 
     @Autowired
     private BotMessageRepository botMessageRepository;
